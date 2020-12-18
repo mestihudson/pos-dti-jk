@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  compiler:
+    image: mestihudson/latex:0.1.0
+    working_dir: /ws
+    volumes:
+    - .:/ws
+    ports:
+    - 2500:2500
+    environment:
+      PORT: 2500
+      HOST: 0.0.0.0
+    entrypoint: /bin/sh -c './watch.sh; tail -f'
