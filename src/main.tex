@@ -1,18 +1,32 @@
+%\documentclass[a4paper,12pt,titlepage]{article}
 \documentclass[a4paper,12pt]{article}
-% \usepackage[alf]{abntex2cite}
-% \usepackage[brazil]{babel}
-% \usepackage{graphicx}
-% \usepackage[lmargin=3cm,tmargin=3cm,rmargin=2cm,bmargin=2cm]{geometry}
-% \usepackage{indentfirst}
-% \setlength{\parindent}{1.25cm}
+\usepackage[brazil,english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[alf]{abntex2cite}
 \usepackage{lipsum}
+
+\title{Hive: o uso de TDD para construir um jogo web multiplayer com arquitetura limpa}
+\author{Hudson Ferreira Leite}
 
 \begin{document}
 
-Hive: usando TDD para implementar uma arquitetura limpa em um jogo multiplayer para web
+\maketitle
 
-% \lipsum[1] \cite{freeman2009}
+\selectlanguage{brazil}
+\begin{abstract}
+  Resumo em Português
+\end{abstract}
 
-% \bibliography{refs}
+\selectlanguage{english}
+\begin{abstract}
+  Abstract in English
+\end{abstract}
+
+Um texto qualquer \cite{freeman2009}.
+
+\bibliographystyle{plain}
+\bibliography{refs}
 
 \end{document}

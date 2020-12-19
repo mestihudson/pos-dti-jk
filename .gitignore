@@ -4,3 +4,4 @@ yarn.lock
 *.aux
 *.pdf
 *.out
+*.toc
