@@ -7,6 +7,7 @@ while true; do
   echo '--------------------------------------------------------------------' &&
   echo '' &&
   sleep 1 &&
-  inotifywait -m --exclude "*.log" --exclude "*.pdf" --exclude "*.aux" --exclude "index.html" "." -r -e modify|pdflatex sample.tex
+  rm -frv *.log *.pdf *.aux *.out &&
+  inotifywait -m --exclude "*.out" --exclude "*.log" --exclude "*.pdf" --exclude "*.aux" --exclude "index.html" "." -r -e modify|pdflatex main.tex
 done
 cd -
