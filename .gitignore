@@ -8,3 +8,7 @@ yarn.lock
 *.bbl
 *.brf
 *.blg
+*.idx
+*.lof
+*.loq
+*.lot
