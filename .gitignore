@@ -5,3 +5,6 @@ yarn.lock
 *.pdf
 *.out
 *.toc
+*.bbl
+*.brf
+*.blg
