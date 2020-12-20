@@ -1,0 +1,117 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Artigo segundo as normais mais atualizadas da ABNT
+% Adaptado do projeto ABNTeX2 (que nao esta totalmente sincronizada com as normas da ABNT)
+% Autor: Berg Dantas (bergdantas@msn.com)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[article,12pt,oneside,a4paper,english,brazil,sumario=tradicional]{abntex2}		
+% Pacotes usados
+\usepackage{times}%Usa a fonte Latin Modern
+\usepackage[T1]{fontenc}%Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}%Codificacao do documento
+\usepackage{indentfirst}%Indenta o primeiro parágrafo de cada seção.
+\usepackage{nomencl}%Lista de simbolos
+\usepackage{color}%Controle das cores
+\usepackage{graphicx}%Inclusão de gráficos
+\usepackage{microtype}%Para melhorias de justificação
+\usepackage{lipsum}%Para geração de dummy text
+\usepackage[abnt-emphasize=bf,abnt-and-type=e,alf]{abntex2cite}%Citações ABNT
+\usepackage{mathptmx}
+%\usepackage[bottom=2cm,top=3cm,left=3cm,right=2cm]{geometry}
+
+% Configuracoes do documento
+\graphicspath{{./Figuras/}}%Images na pasta "Figuras"
+\setsecheadstyle{\bfseries \normalsize \uppercase}
+\setsubsecheadstyle{\normalsize \uppercase}
+\setsubsubsecheadstyle{\bfseries \normalsize}
+\setlrmarginsandblock{3cm}{2cm}{*}%Margens esquerda-direita
+\setulmarginsandblock{3cm}{2cm}{*}%Margens cima-baixo
+\checkandfixthelayout
+\setlength{\parindent}{1.25cm}%paragrafo
+\OnehalfSpacing%espacamento de 1,5
+\setlength{\ABNTEXcitacaorecuo}{4cm}%recuo citacao direta +3
+
+\begin{document}
+\selectlanguage{brazil} % Seleciona o idioma do documento
+\frenchspacing % Retira espaço extra obsoleto entre as frases.
+
+\begin{center}
+%TITULO
+	\uppercase{\bfseries{Titulo do Artigo Aqui!}}
+	\vspace{12pt}
+\end{center}
+
+\begin{flushright}
+%AUTOR - Pode-se contar com infinitos autores   :)
+	Autor A\footnote{IFRN, autorA@autor.com}
+	\\
+	Autor B\footnote{IFRN, autorA@autor.com}
+	\vspace{12pt}
+\end{flushright}
+
+\begin{footnotesize}
+\SingleSpacing
+\noindent
+\small{\textbf{Resumo:}}
+\noindent
+\small
+%TEXTO DO RESUMO (em português}
+Resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo.
+
+\noindent
+%PALAVRAS-CHAVE} 
+\textbf{Palavras-chave}: PC1, PC2, PC3 e PC4.
+\end{footnotesize}
+
+\textual
+\pagestyle{simple}
+\aliaspagestyle{chapter}{simple}
+
+
+\section{Introdu\c c\~ao}
+\label{secIntroducao}
+\normalsize
+% TEXTO DA INTRODUCAO
+Introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao.
+
+Introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao introdu\c c\~ao.
+
+\section{Desenvolvimento}
+% TEXTO DO DESENVOLVIMENTO
+Na se\c c\~ao de desenvolvimento voc\^es usar\~ao muitas refer\^encias!!!
+
+\textbackslash nocite\{rotuloDaReferencia\}, faz com que uma cita\c c\~ao que n\~ao foi citada no texto apare\c ca nas Refer\^encias Bibliogr\'aficas. \textbf{Exemplo de uso:} \textbackslash nocite\{tanebaum2010\} 
+
+De acordo\citeonline{tanebaum2010}, n\~ao importa o que ele disse. S\'o estou fazendo uma cita\c c\~ao indireta. 
+
+"($\cdots$) cita\c c\~ao direta com at\'e 3 linhas, cita\c c\~ao direta com at\'e 3 linhas, cita\c c\~ao direta com at\'e 3 linhas, cita\c c\~ao direta com at\'e 3 linhas, cita\c c\~ao direta com at\'e 3 linhas cita\c c\~ao direta com at\'e 3 linhas cita\c c\~ao direta com at\'e 3 linhas ($\cdots$)" \cite[p.~34]{tanebaum2010}. 
+ 
+\vspace{24pt} %dois espacos de 12
+\begin{citacao}
+"Cita\c c\~ao direta com mais de 3 linhas, cita\c c\~ao direta com mais de 3 linhas, cita\c c\~ao direta com mais de 3 linhas, cita\c c\~ao direta com mais de 3 linhas, cita\c c\~ao direta com mais de 3 linhas, cita\c c\~ao direta com mais de 3 linhas, cita\c c\~ao direta com mais de 3 linhas, cita\c c\~ao direta com mais de 3 linhas, cita\c c\~ao direta com mais de 3 linhas, cita\c c\~ao direta com mais de 3 linhas, cita\c c\~ao direta com mais de 3 linhas, cita\c c\~ao direta com mais de 3 linhas, cita\c c\~ao direta com mais de 3 linhas, cita\c c\~ao direta com mais de 3 linhas, cita\c c\~ao direta com mais de 3 linhas. \cite[p.~34]{tanebaum2010}. 
+\end{citacao}
+\vspace{24pt} %dois espacos de 12
+
+Quando for preencher o arquivo "referencias.bib", no campo "author", se houverem dois ou mais autores, preenche os nomes normalmente separando-os por "and". Exemplo: \textit{Berg Dantas and Juliana Schivani}. Deve-se fazer isso sempre. Caso haja mais de 3 autores, o latex seleciona sozinho o primeiro e completa com o \textit{et al.} (significa "e outros" em latim). 
+
+ 
+\subsection{Materiais}
+Materiais materiais materiais materiais materiais materiais materiais materiais materiais materiais materiais materiais materiais.
+
+\subsection{M\'etodo}
+M\'etodo m\'etodo m\'etodo m\'etodo m\'etodo m\'etodo m\'etodo m\'etodo m\'etodo m\'etodo m\'etodo m\'etodo m\'etodo.
+
+\subsubsection{Testes}
+Testes testes testes testes testes testes testes testes testes testes testes testes testes testes testes testes testes.
+
+\section{Resultados}
+Resultados resultados resultados resultados resultados resultados resultados resultados.
+
+
+\section{Considera\c c\~oes finais}
+% TEXTO DA CONCLUSAO
+Considera\c c\~oes finais considera\c c\~oes finais considera\c c\~oes finais considera\c c\~oes finais considera\c c\~oes finais considera\c c\~oes finais.
+
+\renewcommand{\bibsection}{\section*{REFER\^ENCIAS BIBLIOGR\'AFICAS}}
+\bibliographystyle{abntex2-alf}
+\bibliography{Referencias}
+\end{document}
