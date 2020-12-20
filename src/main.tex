@@ -1,15 +1,27 @@
-\documentclass[12pt,a4paper]{article}
-\usepackage[alf]{abntex2cite}
+\documentclass[12pt,a4paper,oneside,english,brazil]{article}
+\usepackage[abnt-emphasize=bf,abnt-and-type=e,alf]{abntex2cite}
+\usepackage{times}
+\usepackage[left=3cm, top=3cm, right=2cm, bottom=2cm]{geometry}
 
-\title{Título do artigo}
+\title{
+  \textbf{Hive} \\
+  \large um estudo de caso do uso de desenvolvimento guiado por testes para
+  alcançar uma arquitetura limpa na construção de um jogo para internet com
+  múltiplos competidores
+}
 \author{Hudson Ferreira Leite}
+\date{2021}
 
 \begin{document}
 
 \maketitle
 
+\clearpage
 Um texto qualquer. \cite{freeman2009}.
 
+\clearpage
+\renewcommand\refname{Referências Bibliográficas}
+\bibliographystyle{abntex2-alf}
 \bibliography{refs}
 
 \end{document}
