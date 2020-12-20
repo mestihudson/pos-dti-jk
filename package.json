@@ -4,9 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "live-server src"
+    "start": "live-server src",
+    "compile": "nodemon --exec './compile.sh' -e 'tex'"
   },
   "devDependencies": {
-    "live-server": "^1.2.1"
+    "live-server": "^1.2.1",
+    "nodemon": "^2.0.6"
   }
 }

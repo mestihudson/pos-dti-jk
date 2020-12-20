@@ -1,9 +1,10 @@
 version: '3.8'
 
 services:
-  compiler:
-    image: mestihudson/latex:0.1.0
+  server:
+    image: node:12.20.0-alpine3.12
     working_dir: /ws
+    entrypoint: /bin/sh -c 'yarn install && yarn start; tail -f'
     volumes:
     - .:/ws
     ports:
@@ -11,4 +12,9 @@ services:
     environment:
       PORT: 2500
       HOST: 0.0.0.0
-    entrypoint: /bin/sh -c './watch.sh; tail -f'
+  compile:
+    image: mestihudson/latex:0.1.0
+    working_dir: /ws
+    entrypoint: /bin/sh -c 'yarn install && yarn compile; tail -f'
+    volumes:
+    - .:/ws
