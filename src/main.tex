@@ -2,6 +2,10 @@
 \usepackage[abnt-emphasize=bf,abnt-and-type=e,alf]{abntex2cite}
 \usepackage{times}
 \usepackage[left=3cm, top=3cm, right=2cm, bottom=2cm]{geometry}
+\renewcommand{\baselinestretch}{1.5}
+\usepackage{indentfirst}
+
+\input{config_listing_code}
 
 \title{
   \textbf{Hive} \\
@@ -14,10 +18,80 @@
 
 \begin{document}
 
-\maketitle
+% \maketitle
 
 \clearpage
-Um texto qualquer. \cite{freeman2009}.
+
+\section{Introdução}
+% \label{secIntroducao}
+% \normalsize
+
+Desenvolver software sempre foi uma atividadade complexa, que pode, facilmente,
+apresentar desafios das mais diveras naturezas: agendamento; má-definição de
+requisitos - funcionais ou não; subdimensionamento de recursos;
+não-escalabilidade; etc.
+
+Negligenciar esse amálgama de possibilidades é um erro comum, e até esperado,
+de profissionais pouco experimentados, mas, não raro, encontram-se exemplares
+com bastante quilometragem na carreira.
+
+O Standish Group demostra, em seu \emph{Chaos Report} \cite{ChaosReport2015}, que
+quanto maior o projeto maior é a chance de falha. O mesmo relatório, no entanto,
+aponta alguns caminhos a seguir para encontrar o sucesso: \emph{uma
+arquitetura padrão} e \emph{um processo ágil}.
+
+Ao mencionar agilidade é possível inferir que a capacidade de adaptação é uma
+necessidade fundamental para o bom andamento, princípio defendido desde a
+primeira hora por este tipo de metodologia.
+
+Quanto à  arquitetura, faz-se evidente que utilizar um padrão é uma decisão que
+pode poupar longas, e pouco frutíferas, discursões sobre assuntos já
+consolidados.
+
+\section{Testes}
+
+\subsection{Desenvolvimento Guiado por Testes (TDD)?}
+
+Dentre as práticas que sustentam os métodos ágeis, o uso de testes, como uma
+disciplina de suporte as demais, é um fato consolidado. Mas a abordagem, também,
+conhecida por \emph{testar primeiro} é ainda mais difundida nesse meio.
+
+Não é raro ver profissionais se referindo tal técnica como "desenvolvimento
+orientado a testes", e ainda que não se possa dizer que esta expressão está
+incorreta, essa é uma consequência da sua aplicação. Mais provavel, seria dizer,
+que a tradução mais correta seria "desenvolvimento guiado por testes". A ideia é
+extremamente simples \cite[p.1]{FreemanPryce2009}: escrever um teste para um
+código ainda inexistente.
+
+Essa postura realoca o papel dos testes, de uma atividade meramente focada em
+descobrir defeitos para uma disciplina centrada na experiência do usuário, ao
+ajudar os desenvolvedores a entender as reais necessidades daqueles, através de
+um processo dialético de construção de conhecimento \footnote{
+  \citeonline[p.28]{Oliveira1993} sugere, ao analisar Vygotsky e o processo de
+  formação de conceitos, que os últimos são construções culturais,
+  internalizadas pelos indivíduos ao longo do processo de desenvolvimento.
+}.
+
+Daí porque \citeonline[p.3-5]{FreemanPryce2009} posicionam a prática como
+fundamentada em três pilares: 1. aprendizagem; 2. retroalimentação; 3. suporte a
+mudança, e de onde se pode concluir se tratar de uma atividade incremental e
+iterativa.
+
+\section{Arquitetura de Software}
+
+\subsection{Arquitetura Limpa}
+
+\section{Como tdd auxilia na busca de uma arquitetura limpa?}
+
+\section{O estudo de caso}
+
+\lstinputlisting{App.js}
+
+\section{
+  O desenvolvimento dos conceitos citados na implementação do estudo de caso
+}
+
+\section{Conclusão}
 
 \clearpage
 \renewcommand\refname{Referências Bibliográficas}
