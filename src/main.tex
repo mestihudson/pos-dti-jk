@@ -4,20 +4,28 @@
   \usepackage[left=3cm, top=3cm, right=2cm, bottom=2cm]{geometry}
   \renewcommand{\baselinestretch}{1.5}
   \usepackage{indentfirst}
+  \usepackage{graphicx}
+  \graphicspath{ {./images/} }
 
   \input{config_listing_code}
 
-  \title{
-    \textbf{Hive} \\
-    \large um estudo de caso do uso de desenvolvimento guiado por testes para
-    alcançar uma arquitetura limpa na construção de um jogo para internet com
-    múltiplos competidores
-  }
-  \author{Hudson Ferreira Leite}
-  \date{2021}
+    \title{
+      \textbf{Hive} \\
+      \large um estudo de caso do uso de desenvolvimento guiado por testes para
+      alcançar uma arquitetura limpa na construção de um jogo para internet com
+      múltiplos competidores
+    }
+    \author{Hudson Ferreira Leite}
+    \date{2021}
 
 \begin{document}
   \maketitle
+
+  \clearpage
+
+    \renewcommand\refname{Lista de Figuras}
+
+      \listoffigures
 
   \clearpage
 
@@ -63,7 +71,26 @@
       "desenvolvimento \emph{guiado por} testes".
 
       A ideia é extremamente simples \cite[p.1]{FreemanPryce2009}: \emph{escrever um
-      teste para um código ainda não existente}.
+      teste para um código que ainda não existente}. Sumariamente falando, de
+      maneira mais completa, trata-se de um ciclo de três etapas
+      \ref{fig:ciclotdd}:
+
+      \begin{figure}[htb]
+        \centering
+        \caption{Ciclo TDD}
+        \includegraphics[width=8cm]{ciclo-tdd}
+        \label{fig:ciclotdd}
+        \\
+        Fonte: Knowledge21 \footnote{\cite{Ferreira2018}}
+      \end{figure}
+
+      \begin{itemize}
+        \item Red - Escreva um teste para o qual não existe uma
+          implementação, portanto, não deve estar passando nesse
+          momento;
+        \item Green - Faça passar o teste;
+        \item Refactor - Remova duplicações,  melhore a legibilidade.
+      \end{itemize}
 
       Essa postura realoca o papel dos testes, de uma atividade meramente focada
       em descobrir defeitos para uma disciplina centrada na experiência do
@@ -82,6 +109,8 @@
         \item Suporte a mudança, e de onde se pode concluir se tratar de uma
               atividade  incremental e iterativa.
       \end{enumerate}
+
+      
 
   \section{Arquitetura de Software}
 
