@@ -22,6 +22,7 @@
 \begin{document}
   \maketitle
 
+  % apenas se o número de figuras exceder 10
   \clearpage
 
     \renewcommand\refname{Lista de Figuras}
@@ -56,7 +57,30 @@
 
   \section{Testes}
 
-    <texto da sessão>
+    Se estabelecermos um marco na história da programação como sendo a parceiria
+    entre a matemática londrina Ada Lovelace, e o, também, matemático londrino
+    Charles Babbage\footnote{\cite{Huskey1980}}, pode-se dizer que essa
+    disciplina possui mais de 180 anos, e com ela dois grande problemas:
+
+      \begin{itemize}
+        \item Especificar o comportamento de um software;
+        \item Garantir que um software não possui defeitos.
+      \end{itemize}
+
+    No primeiro, por mais avanços que se tenha feito no campo da engenharia de
+    software, essa é, ainda, uma área bastante desafiadora. No último, Disjkstra
+    estatuiu que \emph{testes mostram a presença, não a ausência de defeitos}
+    \cite[p. 16]{Nato1969}.
+
+    Daí a necessidade de se testar \cite[p. xxix-xxx]{Mezaros2007}:
+
+      \begin{itemize}
+        \item Paulatinamente construir conhecimento através da retroalimentação
+          de hipóteses;
+        \item Exaustivamente chegar a um ponto onde não é possível provar a
+          presença de defeitos.
+      \end{itemize}
+
 
     \subsection{Desenvolvimento Guiado por Testes (TDD)?}
 
@@ -72,9 +96,9 @@
       "desenvolvimento \emph{guiado por} testes".
 
       A ideia é extremamente simples \cite[p.1]{FreemanPryce2009}: \emph{escrever um
-      teste para um código que ainda não existente}. Sumariamente falando, de
-      maneira mais completa, trata-se de um ciclo de três etapas
-      (Fig. \ref{fig:ciclotdd}):
+      teste para um código que ainda não existente}, sumariamente falando, mas
+      de maneira mais completa, trata-se de um ciclo de três etapas (Fig.
+      \ref{fig:ciclotdd}):
 
       \begin{center}
         \begin{figure}[h]
@@ -108,8 +132,7 @@
       \begin{enumerate}
         \item Aprendizagem;
         \item Retroalimentação;
-        \item Suporte a mudança, e de onde se pode concluir se tratar de uma
-              atividade  incremental e iterativa.
+        \item Suporte a mudança.
       \end{enumerate}
 
       
