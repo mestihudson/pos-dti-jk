@@ -6,6 +6,7 @@
   \usepackage{indentfirst}
   \usepackage{graphicx}
   \graphicspath{ {./images/} }
+  \renewcommand{\figurename}{\textbf{Fig.}}
 
   \input{config_listing_code}
 
@@ -73,16 +74,16 @@
       A ideia é extremamente simples \cite[p.1]{FreemanPryce2009}: \emph{escrever um
       teste para um código que ainda não existente}. Sumariamente falando, de
       maneira mais completa, trata-se de um ciclo de três etapas
-      \ref{fig:ciclotdd}:
+      (Fig. \ref{fig:ciclotdd}):
 
       \begin{center}
-        \begin{figure}[htb]
+        \begin{figure}[h]
           \centering
           \caption{Ciclo TDD}
           \includegraphics[width=8cm]{ciclo-tdd}
           \label{fig:ciclotdd}
         \end{figure}
-        Fonte: Knowledge21\footnote{\citeonline{Ferreira2018}}
+        Fonte: Blog da Knowledge21\footnote{\citeonline{Ferreira2018}}
       \end{center}
 
       \begin{itemize}
