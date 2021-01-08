@@ -7,6 +7,7 @@
   \usepackage{graphicx}
   \graphicspath{ {./images/} }
   \renewcommand{\figurename}{\textbf{Fig.}}
+  \setlength{\parskip}{0.2cm}
 
   \input{config_listing_code}
 
@@ -25,7 +26,7 @@
   % apenas se o número de figuras exceder 10
   \clearpage
 
-    \renewcommand\refname{Lista de Figuras}
+    \renewcommand{\listfigurename}{Lista de Figuras}
 
       \listoffigures
 
@@ -80,6 +81,13 @@
         \item Exaustivamente chegar a um ponto onde não é possível provar a
           presença de defeitos.
       \end{itemize}
+
+    Testes, segundo os métodos tradicionais de desenvolvimento, são feitos em
+    etapa posterior a sua construção, para \emph{medir qualidade}. Uma abordagem
+    diferente daquela que deseja \emph{construir qualidade}
+    \footnote{\cite[p. 7]{FarcicGarcia2015}}. Isso reverbera em \emph{quem} os
+    faz: uma equipe diferente da que construiu o software ou o próprio
+    desenvolvedor?
 
 
     \subsection{Desenvolvimento Guiado por Testes (TDD)?}
