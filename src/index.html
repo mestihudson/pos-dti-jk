@@ -3,14 +3,30 @@
   <head>
     <meta charset="UTF-8">
     <title>Entrada 2</title>
-<script type="text/javascript">
-  function resizeIframe(obj){
-    obj.style.height = 0;
-    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
-  }
-</script>
+    <script type="text/javascript">
+      function resizeIframe(obj){
+        obj.style.height = 0;
+        obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+      }
+    </script>
+    <style>
+      #pdf {
+        overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+      }
+    </style>
   </head>
   <body>
-    <iframe id="pdf" src="/main.pdf" width="70%" height="960px"></iframe>
+    <iframe
+      id="pdf" src="/main.pdf#view=FitH&page=6" frameborder="0" height="100%" width="100%"
+    ></iframe>
   </body>
 </html>

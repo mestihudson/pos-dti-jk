@@ -23,12 +23,12 @@
 \begin{document}
   \maketitle
 
-  % apenas se o número de figuras exceder 10
-  \clearpage
+  % % apenas se o número de figuras exceder 10
+  % \clearpage
 
-    \renewcommand{\listfigurename}{Lista de Figuras}
+  %   \renewcommand{\listfigurename}{Lista de Figuras}
 
-      \listoffigures
+  %     \listoffigures
 
   \clearpage
 
@@ -143,19 +143,62 @@
         \item Suporte a mudança.
       \end{enumerate}
 
-      
 
   \section{Arquitetura de Software}
 
-    <texto da sessão>
+    A Engenharia de Software, enquanto disciplina da Ciência dos
+    Computadores, recebe o seu primeiro nome graças a uma série de
+    propriedades que lhe são comuns entre ela e sua "aparentada" e seu
+    sobrenome, em função de características que lhe são peculiares.
+
+    Tal fenômeno, bastante comum nessa área do conhecimento, explica a
+    denominação da chamada Arquitetura de Software que, na ausência de
+    uma expressão mais apropriada, toma emprestado a alcunha para
+    conceituar uma abordagem com um alto nível de abstração, que "a
+    matéria dos dígitos binários" exige.
+
+    Vejamos a definição do verbete inicial da locução: \emph{1. arte de
+    projetar, construir, decorar e oraganizar os espaços de uma edificação; 2.
+    obras arquitetônicas que caracterizam uma época ou povo \footnote{\cite[p.
+    81]{Kury2007}}}.
+
+    Etimologicamente, a palavra remete à composição grega de \emph{ARKHEIN} -
+    que significa \emph{comandar} em português - com \emph{TEKTON} - que por
+    sua vez quer dizer \emph{artesão ou construtor}\footnote{\cite{
+    Etimologia2019}}.
+
+    Daí, por aproximação, diz tratar-se dos dítames direcionadores de uma
+    determinada construção. Ora, não resta dúvida, assim, que Arquitetura de
+    Software são os preceitos orientadores de um sistema computacional.
 
     \subsection{Arquitetura Limpa}
 
-      <texto da subsessão>
+      Vejamos, se ao vislumbrar determinada edificação é possível inferir algumas
+      características de uma obra, seria possível realizar o mesmo exercício ao
+      observar um "programa computacional"?
 
-  \section{Como tdd auxilia na busca de uma arquitetura limpa?}
+      A depender da forma como um prédio é arquitetado, é factível realizar
+      alterações funcionais sem prejuízo à estrutura, ou, ainda, sem qualquer
+      noção do dano que tais modificações podem desencadear.
 
-    <texto da sessão>
+      Tal qual uma Arquitetura Limpa "grita"\cite[p. 196]{Martin2018} qual a sua
+      motivação - uma casa, uma biblioteca, uma fábrica, etc. - uma Arquitetura
+      de Software Limpa diz \emph{o quê é} e emph{o que pode ser feito em seu
+      contexto}.
+
+  \section{Como TDD auxilia na processo de chegada a uma Arquitetura Limpa?}
+
+    É fácil encontrar muitas similaridades entre as arquiteturas citadas, mas
+    existe um quesito que pesa a favor da última: software, como o nome sugere:
+    soft - em português, flexível, suave - é um bem intangível, cuja
+    construção, guardadas os devidos contextos e proporções, não oferece os
+    mesmos riscos, talvez, irreparáveis que a primeira.
+
+    Desenvolvimento guiado por testes usa uma abordagem que permite definir as
+    funções essenciais do sistema, implementá-las da maneira mais simplória
+    conhecida e através de sucessivas modificações, amparadas por uma rede de
+    proteção que previne a regressão, alcançar um modelo que diz, claramente,
+    quais seus objetivos e permite a sustentável evolução do sistema.
 
   \section{O estudo de caso}
 
