@@ -186,7 +186,9 @@
     claramente, quais seus objetivos e permite uma evoluçãi sustentável do
     produto.
 
-  \section{O jogo}
+  \section{O estudo de caso}
+
+    \subsection{O jogo}
 
     Hive\footnote{Adaptado de \cite{UltraBoardGames2020}.} é um jogo
     abstrato de duelo, tal qual o xadrez, onde os jogadores devem usar seus
@@ -223,32 +225,46 @@
     estão ocupados por alguma peça em jogo, independente de a quem elas
     pertençam.
 
-  \section{O estudo de caso}
 
-    Primeiramente
-    \footnote{Mesmo sendo um jogo com regras, relativamente,
-    simples, este é um estudo que não se encerra em 20 páginas, considerando a
-    quantidade de código que pode vir a ser gerada. Também é necessário
-    salientar que o contexto de automatizar um processo cujas regras já estão
-    bem definidas apresenta privilégios não compartilhados em uma situação mais
-    comercial, mas servem bem aos critérios didáticos pretendidos.},
-    usamos a técnica de \emph{mapeamento de histórias de usuário}\footnote{
-    \cite{Patton2014}} para identificar o fluxo macro de usuário (Fig.
-    \ref{fig:fluxogeral}) e, sucessivamente, quebrar as histórias em um nível de
-    abstração mais próximo de uma ação atômica identificável e, portanto,
-    passível de automatização.
+    \subsection{O escopo}
 
-    \begin{center}
-      \begin{figure}[h]
-        \centering
-        \caption{Fluxo macro de usuário}
-        \includegraphics[width=3cm]{ciclo-tdd}
-        \label{fig:fluxogeral}
-      \end{figure}
-      Fonte: Próprio autor
-    \end{center}
+      O objetivo é construir uma aplicação web onde um usuário qualquer possa se
+      cadastrar para adquirir acesso. Uma vez autenticado o citado pode se
+      disponibilizar para uma partida com um adversário aleatório\footnote{
+      Poderíamos extender as capacidades do sistema para permitir que um usuário
+      escolhesse/convidasse seu adversário para uma partida ou, ainda, criar um
+      ranking dos melhores jogadores, mas vamos manter as coisas mais enxutas,
+      pois aqui o foco é desenvolver os conceitos e não entregar uma solução
+      completa.}.
 
-    \lstinputlisting{App.js}
+
+    \subsection{A solução}
+
+      Primeiramente
+      \footnote{Mesmo sendo um jogo com regras, relativamente,
+      simples, e uma aplicação com escopo bem limitado, este é um estudo que não
+      se encerra em 20 páginas, considerando a quantidade de código que pode vir
+      a ser gerada. Também é necessário salientar que o contexto de automatizar
+      um processo cujas regras já estão bem definidas apresenta privilégios não
+      compartilhados em uma situação mais próxima do real, mas servem bem aos
+      critérios didáticos pretendidos.},
+      usamos a técnica de \emph{mapeamento de histórias de usuário}\footnote{
+      \cite{Patton2014}} para identificar o fluxo macro de usuário (Fig.
+      \ref{fig:fluxogeral}) e, sucessivamente, quebrar as histórias em um nível
+      de abstração mais próximo de uma ação atômica identificável e, portanto,
+      passível de automatização.
+
+      \begin{center}
+        \begin{figure}[h]
+          \centering
+          \caption{Mapeamento de Histórias de Usuário}
+          \includegraphics[width=16cm]{user-stories-mapping}
+          \label{fig:fluxogeral}
+        \end{figure}
+        Fonte: Próprio autor\footnote{Criado em "https://app.avion.io"}
+      \end{center}
+
+      \lstinputlisting{App.js}
 
   \section{Conclusão}
 
