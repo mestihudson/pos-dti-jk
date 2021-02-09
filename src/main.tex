@@ -249,10 +249,13 @@
       compartilhados em uma situação mais próxima do real, mas servem bem aos
       critérios didáticos pretendidos.},
       usamos a técnica de \emph{mapeamento de histórias de usuário}\footnote{
-      \cite{Patton2014}} para identificar o fluxo macro de usuário (Fig.
-      \ref{fig:fluxogeral}) e, sucessivamente, quebrar as histórias em um nível
-      de abstração mais próximo de uma ação atômica identificável e, portanto,
-      passível de automatização.
+      \cite{Patton2014}} para identificar fluxos completos de uso (Fig.
+      \ref{fig:fluxogeral}). Essa técnica permite definir todas as histórias que
+      o usuário deseja ver implementadas mas, também, aquelas que agregam maior
+      valor ao resultado, possibilitando a delimitação de um produto mínimo
+      viável (MVP) que atenda às necessidades daquele e, ainda, gerenciem os
+      riscos de construir uma solução pormenorizada, antes mesmo de validar
+      algumas hipóteses.
 
       \begin{center}
         \begin{figure}[h]
@@ -264,7 +267,23 @@
         Fonte: Próprio autor\footnote{Criado em "https://app.avion.io"}
       \end{center}
 
-      \lstinputlisting{App.js}
+      Assim, podemos perceber que quatro funcionalidades são essenciais para o
+      MVP: Criar conta; Efetuar autenticação; Disponibilizar-se para partida; e,
+      Executar partida.
+
+      Um exercício bem simples para saber se uma história de usuário é grande,
+      ou pequena, demais, é elencar os cenários vinculados. Parâmetros comumente
+      usados são não menores que 2 e não maiores que 7. Para as identificadas,
+      os seguintes cenários foram levantados:
+
+      \lstinputlisting{Cenarios.txt}
+
+      O que surege uma quebra da história \emph{Executar partida} em pelo menos
+      outras três: Colocar peça em jogo; Movimentar peça; Realizar movimentos
+      proibidos.
+
+      De posse desses subsídios, agora é necessário escolher uma
+      história/cenário
 
   \section{Conclusão}
 
