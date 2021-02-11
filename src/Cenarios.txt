@@ -13,13 +13,13 @@ Executar Partida
   Colocar primeira peça em jogo
   Colocar segunda peça em jogo
   Colocar terceira peça em jogo
-  Colocar quarta peça de jogador sem ter colocado abelha rainha em jogo
-  Movimentar peça, sem ter colocado abelha rainha em jogo
+  Não colocar abelha rainha até o quarto turno do jogador
+  Movimentar peça sem abelha rainha em jogo
   Movimentar abelha rainha
   Movimentar aranha
   Movimentar besouro
   Movimentar gafanhoto
   Movimentar formiga
-  Movimentar peça deslizante para espaço não permitido
-  Movimentar peça quebrando colméia em duas
+  Movimentar peça para posição não deslizável
+  Movimentar peça com fragmentação da colméia
   Movimentar peça presa por outra

@@ -1,0 +1,16 @@
+Colocar
+  Primeira peça
+  Segunda peça
+  Terceira peça
+Movimentar peça
+  Movimentar abelha rainha
+  Movimentar aranha
+  Movimentar besouro
+  Movimentar gafanhoto
+  Movimentar formiga
+RealizarMovimentação proibida
+  Não colocar abelha rainha até o quarto turno do jogador
+  Movimentar peça sem abelha rainha em jogo
+  Movimentar peça para posição não deslizável
+  Movimentar peça com fragmentação da colméia
+  Movimentar peça presa por outra
