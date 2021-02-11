@@ -4,9 +4,11 @@
   \usepackage[left=3cm, top=3cm, right=2cm, bottom=2cm]{geometry}
   \renewcommand{\baselinestretch}{1.5}
   \usepackage{indentfirst}
-  \usepackage{graphicx}
+  \usepackage{efbox,graphicx}
+  \efboxsetup{linecolor=black,linewidth=1pt}
   \graphicspath{ {./images/} }
-  \renewcommand{\figurename}{\textbf{Fig.}}
+  \renewcommand{\figurename}{Figura}
+  \usepackage[labelsep=endash,font=bf]{caption}
   \setlength{\parskip}{0.2cm}
 
   \input{config_listing_code}
@@ -99,21 +101,20 @@
 
       A ideia é extremamente simples \cite[p.1]{FreemanPryce2009}: \emph{escrever um
       teste para um código que ainda não existente}, sumariamente falando, mas
-      de maneira mais completa, trata-se de um ciclo de três etapas (Fig.
-      \ref{fig:ciclotdd}): red,  escreva um teste para o qual não existe uma
-      implementação, portanto, não deve estar passando nesse momento; green, faça
-      o mesmo passar, escrevendo o código da funcionalidade pretendida; refactor,
-      remova duplicações e melhore a legibilidade.
+      de maneira mais completa, trata-se de um ciclo de três etapas
+      (\textbf{Figura \ref{fig:ciclotdd}}): red,  escreva um teste para o qual
+      não existe uma implementação, portanto, não deve estar passando nesse
+      momento; green, faça o mesmo passar, escrevendo o código da funcionalidade
+      pretendida; refactor, remova duplicações e melhore a legibilidade.
 
-      \begin{center}
-        \begin{figure}[h]
-          \centering
-          \caption{Ciclo TDD}
-          \includegraphics[width=3cm]{ciclo-tdd}
-          \label{fig:ciclotdd}
-        \end{figure}
-        Fonte: Blog da Knowledge21\footnote{\cite{Ferreira2018}}
-      \end{center}
+      \begin{figure}[h!]
+        \centering
+        \caption{Ciclo TDD}
+        \efbox{\makebox[\textwidth]{\includegraphics[width=3cm]{ciclo-tdd}}}
+        Fonte: Blog da Knowledge21\footnotemark
+        \label{fig:ciclotdd}
+      \end{figure}
+      \footnotetext{\cite{Ferreira2018}}
 
       Essa postura realoca o papel dos testes de uma atividade meramente focada
       em descobrir defeitos para uma posição centrada na experiência do
@@ -229,54 +230,74 @@
     \subsection{O escopo}
 
       O objetivo é construir uma aplicação web onde um usuário qualquer possa se
-      cadastrar para adquirir acesso. Uma vez autenticado o citado pode se
-      disponibilizar para uma partida com um adversário aleatório\footnote{
-      Poderíamos extender as capacidades do sistema para permitir que um usuário
-      escolhesse/convidasse seu adversário para uma partida ou, ainda, criar um
-      ranking dos melhores jogadores, mas vamos manter as coisas mais enxutas,
-      pois aqui o foco é desenvolver os conceitos e não entregar uma solução
-      completa.}.
+      registrar para adquirir acesso. Uma vez autenticado ele pode se
+      disponibilizar para uma partida com um adversário que tenha realizado o
+      mesmo caminho. E, finalmente, desempenhar uma partida. Deve, ainda, ser
+      porssível, organizar torneios, e manter uma lista classificando os
+      jogadores por suas respectivas pontuações. É desejável, que o registro e a
+      autenticação possam ser realizados utilizando os mecanismos ofertados pelo
+      Google e Facebook. Os jogadores devem ser capazes de convidar um
+      adversário específico para uma partida. Bem como é importante que os
+      mesmos possam recuperar suas senhas que, ocasionalmente, possam vir a
+      esquecer ou alterar informações sobre sim, como nome que é apresentado aos
+      demais, imagem de perfil, além, é claro, de poder remover sua conta, caso
+      não tenha mais interesse no serviço.
+
+      Essa é uma descrição hipotética de necessidade inicial de um interessado
+      em patrocinar um projeto dessa qualidade. Claro, em uma situação real,
+      muitos outros detalhes deveriam ser capturados para refinar a solução, mas
+      aqui vamos partir da premissa que esta é nossa única demanda.
 
 
     \subsection{A solução}
 
-      Primeiramente
-      \footnote{Mesmo sendo um jogo com regras, relativamente,
+      Primeiramente\footnote{Mesmo sendo um jogo com regras, relativamente,
       simples, e uma aplicação com escopo bem limitado, este é um estudo que não
-      se encerra em 20 páginas, considerando a quantidade de código que pode vir
-      a ser gerada. Também é necessário salientar que o contexto de automatizar
-      um processo cujas regras já estão bem definidas apresenta privilégios não
-      compartilhados em uma situação mais próxima do real, mas servem bem aos
-      critérios didáticos pretendidos.},
-      usamos a técnica de \emph{mapeamento de histórias de usuário}\footnote{
-      \cite{Patton2014}} para identificar fluxos completos de uso (Fig.
-      \ref{fig:fluxogeral}). Essa técnica permite definir todas as histórias que
-      o usuário deseja ver implementadas mas, também, aquelas que agregam maior
-      valor ao resultado, possibilitando a delimitação de um produto mínimo
-      viável (MVP) que atenda às necessidades daquele e, ainda, gerenciem os
-      riscos de construir uma solução pormenorizada, antes mesmo de validar
-      algumas hipóteses.
+      se possa encerrar em 20 páginas, considerando a quantidade de código que
+      pode vir a ser gerada. Também é necessário salientar que o contexto de
+      automatizar um processo cujas regras já estão bem definidas apresenta
+      privilégios não compartilhados em uma situação mais próxima do real, mas
+      servem bem aos critérios didáticos pretendidos.}
+      usamos uma técnica chamada
+      \emph{Mapeamento de Histórias de Usuário}\footnote{\cite{Patton2014}}
+      para identificar fluxos completos de uso, conforme
+      \textbf{Figura \ref{fig:fluxogeral}}. Essa técnica permite não só definir
+      todas as histórias que se deseja ver implementadas mas, também, aquelas
+      que agregam maior valor ao resultado, possibilitando a delimitação de um
+      produto mínimo viável (MVP) que atenda às necessidades daquele e, ainda,
+      gerenciem os riscos de construir uma solução pormenorizada, antes mesmo de
+      validar algumas hipóteses.
 
-      \begin{center}
-        \begin{figure}[h]
-          \centering
-          \caption{Mapeamento de Histórias de Usuário}
-          \includegraphics[width=16cm]{user-stories-mapping}
-          \label{fig:fluxogeral}
-        \end{figure}
-        Fonte: Próprio autor\footnote{Criado em "https://app.avion.io"}
-      \end{center}
+      \begin{figure}[h]
+        \centering
+        \caption{Mapeamento de Histórias de Usuário}
+        \efbox{
+          \makebox[\textwidth]{
+            \includegraphics[width=\textwidth]{user-stories-mapping}
+          }
+        }
+        Fonte: Próprio autor\footnotemark
+        \label{fig:fluxogeral}
+      \end{figure}
+      \footnotetext{Criado usando \url{https://app.avion.io}}
 
       Assim, podemos perceber que quatro funcionalidades são essenciais para o
-      MVP: Criar conta; Efetuar autenticação; Disponibilizar-se para partida; e,
-      Executar partida.
+      MVP: \emph{Criar conta}; \emph{Efetuar autenticação};
+      \emph{Disponibilizar-se para partida}; e, \emph{Executar partida}.
 
-      Um exercício bem simples para saber se uma história de usuário é grande,
-      ou pequena, demais, é elencar os cenários vinculados. Parâmetros comumente
-      usados são não menores que 2 e não maiores que 7. Para as identificadas,
-      os seguintes cenários foram levantados:
+      Um exercício bem simples para saber se uma história é muito grande, ou
+      muito pequena, é elencar os cenários vinculados. Parâmetros comumente
+      usados são não menores que 2 e não maiores que 7. Para aquelas, os
+      cenários listados na \textbf{Figura \ref{fig:cenarios-das-historias}}
+      foram levantados.
 
-      \lstinputlisting{Cenarios.txt}
+      \begin{figure}[h]
+        \centering
+        \caption{Cenários das histórias}
+        \lstinputlisting[numbers=none]{Cenarios.txt}
+        Fonte: Próprio autor
+        \label{fig:cenarios-das-historias}
+      \end{figure}
 
       O que surege uma quebra da história \emph{Executar partida} em pelo menos
       outras três: Colocar peça em jogo; Movimentar peça; Realizar movimentos
