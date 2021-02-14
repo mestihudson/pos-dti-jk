@@ -8,7 +8,7 @@
   \efboxsetup{linecolor=black,linewidth=1pt}
   \graphicspath{ {./images/} }
   \renewcommand{\figurename}{Figura}
-  \usepackage[labelsep=endash,font=bf]{caption}
+  \usepackage[labelsep=endash,font=small]{caption}
   \setlength{\parskip}{0.2cm}
 
   \input{config_listing_code}
@@ -71,19 +71,19 @@
     No primeiro, por mais avanços que se tenha feito no campo da engenharia de
     software, essa é, ainda, uma área bastante desafiadora. No último, Disjkstra
     estatuiu que \emph{testes mostram a presença, não a ausência de defeitos}
-    \cite[p. 16]{Nato1969}.
+    \cite[pág. 16]{Nato1969}.
 
-    Daí a necessidade de se testar \cite[p. xxix-xxx]{Mezaros2007}: 1.
+    Daí a necessidade de se testar \cite[pág. xxix-xxx]{Mezaros2007}: 1.
     paulatinamente construir conhecimento através da retroalimentação de
     hipóteses; 2. exaustivamente chegar a um ponto onde não é possível provar a
     presença de defeitos.
 
     Testes, segundo os métodos tradicionais de desenvolvimento, são feitos em
     etapa posterior a sua construção, para \emph{medir qualidade}. Uma abordagem
-    diferente daquela que deseja \emph{construir qualidade}\footnote{\cite[p. 7]
-    {FarcicGarcia2015}}. Isso reverbera de maneira
-    distinta \emph{quem} os executa: uma equipe independente daquela que
-    construiu o software ou o próprio desenvolvedor?
+    diferente daquela que deseja \emph{construir qualidade}\footnote{
+    \cite[pág. 7]{FarcicGarcia2015}}. Isso reverbera de maneira distinta
+    \emph{quem} os executa: uma equipe independente daquela que construiu o
+    software ou o próprio desenvolvedor?
 
 
     \subsection{Desenvolvimento Guiado por Testes (TDD)}
@@ -334,20 +334,21 @@
 
       Importante notar a linguagem utilizada, que não faz qualquer referência as
       tecnologias que dão suporte a solução mas, tão somente, expressão o
-      linguajar dos interessados\footnote{Batizado por \citeonline[p. 34]{
+      linguajar dos interessados\footnote{Batizado por
+      \citeonline[pág. 34]{
       Evans2003} de \emph{Ubiquitous Language} (Linguagem Ubíqua, em tradução
       livre).}.
 
       As primeiras experiências são mais difíceis, mas vale o esforço. Uma dica
-      é usar o que \citeonline[p. 345]{Abelson1996} chamam de \emph{programming
-      by wishful thinking}\footnote{\emph{Programação por desejo}, em tradução
-      livre.}, que, na prática, significa escrever um teste como se a
-      funcionalidade alvo já existisse. Isso mantém o foco em \emph{o quê} o
-      sistema deve fazer em contraposição a \emph{como} ele o fará. Pode parecer
-      uma diferença desprezável, mas o tempo (perdido corrigindo testes frágeis)
-      mostrará que há um abismo inteiro na forma como esta solução estará aberta
-      à gradual evolução (fora o efeito que isso tem sobre o moral do
-      desenvolvedor/testador).
+      é usar o que \citeonline[págs. 142 e 226]{Abelson1996} chamam de \emph{
+      wishful thinking}\footnote{\emph{Pensamento positivo, ou, mais
+      específico, Programação por desejo}, em tradução livre.}, que, na prática,
+      significa escrever um teste como se a funcionalidade alvo já existisse.
+      Isso mantém o foco em \emph{o quê} o sistema deve fazer em contraposição a
+      \emph{como} ele o fará. Pode parecer uma diferença desprezável, mas o
+      tempo (perdido corrigindo testes frágeis) mostrará que há um abismo
+      inteiro na forma como esta solução estará aberta à gradual evolução (fora
+      o efeito nocivo que isso tem sobre o moral do desenvolvedor).
 
   \section{Considerações finais}
 
