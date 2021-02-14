@@ -1,0 +1,6 @@
+# language: pt-BR
+Funcionalidade: Propor partida
+  Cenário: Com adversário disponível
+    Dado que existe um adversário disponível
+    Quando proponho uma partida
+    Então uma partida está pronta para ser executada

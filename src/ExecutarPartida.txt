@@ -8,7 +8,7 @@ Movimentar peça
   Movimentar besouro
   Movimentar gafanhoto
   Movimentar formiga
-RealizarMovimentação proibida
+Realizar movimentação proibida
   Não colocar abelha rainha até o quarto turno do jogador
   Movimentar peça sem abelha rainha em jogo
   Movimentar peça para posição não deslizável

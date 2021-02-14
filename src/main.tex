@@ -310,9 +310,46 @@
         \label{fig:executar-partida}
       \end{figure}
 
-     De posse desses subsídios, agora é necessário escolher um cenário
+      De posse desses subsídios, faz-se mister escolher um cenário, levando em
+      consideração a simplicidade e completude. Explique-se, um que seja simples
+      o suficiente para não criar um entrave logo no início dos trabalhos mas
+      que ainda seja capaz de exercitar o maior número de componentes da
+      estrutura da aplicação. Sendo assim, selecionamos
+      \emph{Propor partida/Com adversário disponível}. O movimento seguinte é
+      detalhar este, de onde se extrai os passos observáveis na \textbf{Figura
+      \ref{fig:passos-primeiro-cenario-escolhido}}.
 
-  \section{Conclusão}
+      \begin{figure}[h]
+        \centering
+        \caption{Detalhamento do cenário escolhido}
+        \lstinputlisting[numbers=none]{PassosPrimeiroCenarioEscolhido.txt}
+        Fonte: Próprio autor\footnotemark
+        \label{fig:passos-primeiro-cenario-escolhido}
+      \end{figure}
+      \footnotetext{Aqui fizemos uso da do modelo criado por
+      \citeonline{North2006} que ficou conhecido como \emph{Behaviour Driven
+      Development} (\emph{Desenvolvimento guiado por comportamento}, em tradução
+      livre). Mais precisamente, a síntaxe adotada pelo framework Cucumber,
+      \emph{Gherkin}.}
+
+      Importante notar a linguagem utilizada, que não faz qualquer referência as
+      tecnologias que dão suporte a solução mas, tão somente, expressão o
+      linguajar dos interessados\footnote{Batizado por \citeonline[p. 34]{
+      Evans2003} de \emph{Ubiquitous Language} (Linguagem Ubíqua, em tradução
+      livre).}.
+
+      As primeiras experiências são mais difíceis, mas vale o esforço. Uma dica
+      é usar o que \citeonline[p. 345]{Abelson1996} chamam de \emph{programming
+      by wishful thinking}\footnote{\emph{Programação por desejo}, em tradução
+      livre.}, que, na prática, significa escrever um teste como se a
+      funcionalidade alvo já existisse. Isso mantém o foco em \emph{o quê} o
+      sistema deve fazer em contraposição a \emph{como} ele o fará. Pode parecer
+      uma diferença desprezável, mas o tempo (perdido corrigindo testes frágeis)
+      mostrará que há um abismo inteiro na forma como esta solução estará aberta
+      à gradual evolução (fora o efeito que isso tem sobre o moral do
+      desenvolvedor/testador).
+
+  \section{Considerações finais}
 
     <texto da sessão>
 

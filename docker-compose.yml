@@ -15,6 +15,7 @@ services:
   compile:
     image: mestihudson/latex:0.1.0
     working_dir: /ws
-    entrypoint: /bin/sh -c 'yarn install && yarn compile; tail -f'
+    restart: always
+    entrypoint: /bin/sh -c 'yarn install && yarn compile'
     volumes:
     - .:/ws
