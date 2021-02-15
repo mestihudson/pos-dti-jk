@@ -1,29 +1,9 @@
-\documentclass[12pt,a4paper,oneside,english,brazil]{article}
-  \usepackage[abnt-emphasize=bf,abnt-and-type=e,alf]{abntex2cite}
-  \usepackage{times}
-  \usepackage[left=3cm, top=3cm, right=2cm, bottom=2cm]{geometry}
-  \renewcommand{\baselinestretch}{1.5}
-  \usepackage{indentfirst}
-  \usepackage{efbox,graphicx}
-  \efboxsetup{linecolor=black,linewidth=1pt}
-  \graphicspath{ {./images/} }
-  \renewcommand{\figurename}{Figura}
-  \usepackage[labelsep=endash,font=small]{caption}
-  \setlength{\parskip}{0.2cm}
-
-  \input{config_listing_code}
-
-    \title{
-      \textbf{Hive} \\
-      \large um estudo de caso do uso de desenvolvimento guiado por testes para
-      alcançar uma arquitetura limpa na construção de um jogo para internet com
-      múltiplos competidores
-    }
-    \author{Hudson Ferreira Leite}
-    \date{2021}
+\input{config}
 
 \begin{document}
-  \maketitle
+  \input{capa}
+  \input{folha_de_rosto}
+  \input{folha_de_aprovacao}
 
   % % apenas se o número de figuras exceder 10
   % \clearpage
@@ -33,6 +13,52 @@
   %     \listoffigures
 
   \clearpage
+
+  % retira a numeração da primeira página textual
+  \thispagestyle{empty}
+
+  \begin{center}
+    \titulo\\
+    \subtitulo\\
+    \autor, \orientador\\
+    \instituicao - Especialização em Desenvolvimento e Gestão de Sistemas de
+    Informação\\
+    QI 03, Lotes 1 a 4, Avenida Samdu Norte, Taguatinga/DF - CEP: 72.135-030\\
+    \{mestihudson, caborges72\}@gmail.com
+  \end{center}
+
+  \resumo{Abstract}{
+    This paper aims to present the benefits of using test automation,
+    demonstrating the use
+    of Selenium in the implementation of this technique. Both the approach of
+    automating the tests
+    and the use of tools that assist in this task are effective in reducing the
+    cost and time of
+    development, since, being configured and in use, possible errors are found
+    early and, in
+    addition, repetitive tasks and tedious tasks start to be executed quickly
+    and automatically,
+    bringing in this way great productivity in the production of the software
+    and also increasing its
+    quality.
+  }{Keywords}{tdd, architecture, test, bdd}
+
+  \resumo{Resumo}{
+    Este trabalho visa apresentar os benefícios da utilização da automação de
+    testes,
+    demostrando o uso do Selenium na implementação desta técnica. Tanto a
+    abordagem de se
+    automatizar os testes como o uso de ferramentas que auxiliam nesta tarefa
+    mostram-se eficazes
+    na redução de custo e tempo de desenvolvimento, pois, estando configuradas e
+    em uso, possíveis
+    erros são encontrados precocemente e, além disso, tarefas repetitivas e
+    tediosas passam a ser
+    executadas de forma rápida e automática, trazendo desta forma grande
+    produtividade na
+    produção do software e aumentando também a sua qualidade.
+  }{Palavras-chave}{tdd, arquitetura, testes, bdd}
+
 
   \section{Introdução}
 
@@ -58,6 +84,7 @@
     Quanto à  arquitetura, faz-se evidente que, utilizar um padrão é uma decisão
     que  pode poupar longas, e pouco frutíferas, discursões sobre assuntos já
     consolidados.
+
 
   \section{Testes}
 
@@ -172,6 +199,7 @@
       etc. - uma arquitetura, de software,  limpa diz \emph{o quê é} e \emph{o
       que é possível fazer em seu contexto}.
 
+
   \section{Como TDD auxilia na processo de chegada a uma Arquitetura Limpa?}
 
     É fácil encontrar muitas similaridades entre as arquiteturas citadas, mas
@@ -186,6 +214,7 @@
     rede de proteção que previne regressões, alcançar um modelo que expressa,
     claramente, quais seus objetivos e permite uma evoluçãi sustentável do
     produto.
+
 
   \section{O estudo de caso}
 
@@ -350,13 +379,15 @@
       inteiro na forma como esta solução estará aberta à gradual evolução (fora
       o efeito nocivo que isso tem sobre o moral do desenvolvedor).
 
+
   \section{Considerações finais}
 
     <texto da sessão>
 
+
   \clearpage
 
-  \renewcommand\refname{Referências Bibliográficas}
+  \renewcommand\refname{Referências}
 
     \bibliographystyle{abntex2-alf}
     \bibliography{refs}

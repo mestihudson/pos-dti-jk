@@ -1,0 +1,25 @@
+\documentclass[12pt,a4paper,oneside,english,brazil]{article}
+  \usepackage[english,brazil]{babel}
+  \usepackage[abnt-emphasize=bf,abnt-and-type=e,alf]{abntex2cite}
+  \usepackage{times}
+  \usepackage[left=3cm, top=3cm, right=2cm, bottom=2cm]{geometry}
+  \renewcommand{\baselinestretch}{1.5}
+  \usepackage{indentfirst}
+  \usepackage{efbox,graphicx}
+  \efboxsetup{linecolor=black,linewidth=1pt}
+  \graphicspath{ {./images/} }
+  \renewcommand{\figurename}{Figura}
+  \usepackage[labelsep=endash,font=small]{caption}
+  \setlength{\parskip}{0.2cm}
+  % configura a posição do número da página
+  \usepackage{fancyhdr}
+  \pagestyle{fancyplain}
+  \fancyhf{}
+  \fancyhead[R]{\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+
+  \input{config_listing_code}
+
+  \input{variaveis}
+
+  \input{macros}
