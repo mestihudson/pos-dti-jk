@@ -258,19 +258,22 @@
 
     \subsection{O escopo}
 
-      O objetivo é construir uma aplicação web onde um usuário qualquer possa se
-      registrar para adquirir acesso. Uma vez autenticado ele pode se
-      disponibilizar para uma partida com um adversário que tenha realizado o
-      mesmo caminho. E, finalmente, desempenhar uma partida. Deve, ainda, ser
-      porssível, organizar torneios, e manter uma lista classificando os
-      jogadores por suas respectivas pontuações. É desejável, que o registro e a
-      autenticação possam ser realizados utilizando os mecanismos ofertados pelo
-      Google e Facebook. Os jogadores devem ser capazes de convidar um
-      adversário específico para uma partida. Bem como é importante que os
-      mesmos possam recuperar suas senhas que, ocasionalmente, possam vir a
-      esquecer ou alterar informações sobre sim, como nome que é apresentado aos
-      demais, imagem de perfil, além, é claro, de poder remover sua conta, caso
-      não tenha mais interesse no serviço.
+      O objetivo é construir uma aplicação onde um usuário qualquer possa se
+      registrar para adquirir acesso. Uma vez autenticado ele pode propor ou
+      responder a uma proposta de partida com um adversário que tenha realizado
+      o mesmo caminho. E, obviamente, desempenhar uma partida. Deve, ainda, ser
+      possível, organizar torneios, visualizar uma lista de classificação dos
+      jogadores por suas respectivas pontuações e, apenas, observar uma partida,
+      sem dela participar. É desejável que o registro e a autenticação possam
+      ser realizados utilizando os mecanismos ofertados pelo Google e Facebook,
+      bem como retomar uma partida que foi explicita ou implicitamente suspensa
+      (um dos jogadores pode ter perdido a conexão por problemas em sua rede).
+      Os jogadores devem ser capazes de convidar um adversário específico para
+      uma partida. Também seria interessante que os usuários possam recuperar
+      suas senhas que, ocasionalmente, possam vir a esquecer ou alterar
+      informações sobre si (como nome que é apresentado aos demais, imagem de
+      perfil, etc) além, é claro, de poder remover sua conta, caso não tenha
+      mais interesse no serviço.
 
       Essa é uma descrição hipotética de necessidade inicial de um interessado
       em patrocinar um projeto dessa qualidade. Claro, em uma situação real,
@@ -364,20 +367,21 @@
       Importante notar a linguagem utilizada, que não faz qualquer referência as
       tecnologias que dão suporte a solução mas, tão somente, expressão o
       linguajar dos interessados\footnote{Batizado por
-      \citeonline[pág. 34]{
+      \citeonline[pág. 24]{
       Evans2003} de \emph{Ubiquitous Language} (Linguagem Ubíqua, em tradução
       livre).}.
 
       As primeiras experiências são mais difíceis, mas vale o esforço. Uma dica
       é usar o que \citeonline[págs. 142 e 226]{Abelson1996} chamam de \emph{
       wishful thinking}\footnote{\emph{Pensamento positivo, ou, mais
-      específico, Programação por desejo}, em tradução livre.}, que, na prática,
-      significa escrever um teste como se a funcionalidade alvo já existisse.
-      Isso mantém o foco em \emph{o quê} o sistema deve fazer em contraposição a
-      \emph{como} ele o fará. Pode parecer uma diferença desprezável, mas o
-      tempo (perdido corrigindo testes frágeis) mostrará que há um abismo
-      inteiro na forma como esta solução estará aberta à gradual evolução (fora
-      o efeito nocivo que isso tem sobre o moral do desenvolvedor).
+      específico, Programação por desejo}, em tradução livre.} - ou o que,
+      \citeonline[págs. 136-146]{Astels2002}, chama de \emph{Código com intenção}
+      - que, na prática, significa escrever um teste como se a funcionalidade
+      alvo já existisse. Isso mantém o foco em \emph{o quê} o sistema deve fazer
+      em contraposição a \emph{como} ele o fará. Pode parecer uma diferença
+      desprezável, mas o tempo (perdido corrigindo testes frágeis) mostrará que
+      há um abismo inteiro na forma como esta solução estará aberta à gradual
+      evolução (fora o efeito nocivo que isso tem sobre o moral do desenvolvedor).
 
 
   \section{Considerações finais}
