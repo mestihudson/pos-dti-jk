@@ -1,0 +1,42 @@
+\subsection{A nova solução}
+
+  Em função das limitações de tamanho e tempo disponível para conclusão,
+  observa-se uma boa oportunidade para utilização de uma abordagem baseada em
+  metodologias ágeis. No entanto, como não é objetivo discorrer sobre o
+  andamento de um projeto de software em sua completude mas focar nas técnicas
+  de desenvolvimento utilizadas, que podem ser aplicadas, inclusive, no contexto
+  de mecanismos tradicionais, uma certa liberdade é tomada.
+
+  Usando histórias de usuário como método de requisitos observamos a existência
+  de muitas delas, de tal forma que se faz necessário organizar as mesmas dentro
+  de um fluxo de capacidade mínimo\footnotemark para completar as intenções
+  firmadas no escopo. Daí se chega à \textbf{Figura
+  \ref{fig:mapeamento-historias-usuarios}}, onde se observa que 6 hisórias são essenciais: criar
+  conta de usuário; realizar autenticação; chamar partida; atender chamado para
+  partida; colocar peça; e, movimentar peça. Também é fácil perceber, que movimentar peça
+  ainda possui um nível de abstração muito alto\footnote{\cite[pág. 23]
+  {Cohn2004}}, sugerindo uma divisão da mesma para alcançar a \textbf{Figura
+  \ref{fig:divisao-historia-executar-partida}}.
+  \footnotetext{\cite{Patton2014} descreve apresenta uma técnica de
+  mapeamente bastante útil, em particular para o contexto em que não existe um
+  proprietário do projeto capaz de priorizar as histórias que mais lhe agregam
+  valor.}
+
+  Factualmente, existem duas escolas de TDD: Londres e Chicago, também conhecidas
+  como \emph{de fora para dentro} (Outside in) e \emph{de dentro para fora}
+  (Inside out), ou ainda, Mockista e Clássica. Segundo \citeonline[págs. 488-492]
+  {BryantPerez2019} sua tecnologia, mecanismos de construção, habilidades e até
+  preferências pessoais irão determinar que abordagem escolher. Mas também cita
+  algumas características que ajudam nessa, tais como: já possui bem delineadas
+  as regras do negócio ou terá que traduzir o linguajar dos usuários e decodificar
+  o processo a ser automatizado; existem restrições de plataforma impostos (se é
+  uma aplicação web, se deve usar um determinado servidor de banco de dados, etc).
+  Advogo ainda que é possível utilizar ambas (claro, em diferentes níveis).
+
+  Sendo assim, optamos pela escola de Londres, que tem como principais
+  representantes \citeonline{FreemanPryce2009}. Sob esta há que se observar que:
+  o clico de TDD possui dois níveis de execução (\textbf{Figura \ref{fig:ciclo-tdd-outside-in}}).
+  Graças a isso, é esperado que o ciclo mais externo permanesça por mais tempo
+  no estado de falha. Também somos forçados a definir um esboço arquitetural
+  sobre o qual repousaremos a solução inicialmente (que pode, ou não, vir a ser
+  modificado durante o transcorrer do projeto).
