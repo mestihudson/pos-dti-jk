@@ -128,20 +128,22 @@
 
       A ideia é extremamente simples \cite[p.1]{FreemanPryce2009}: \emph{escrever um
       teste para um código que ainda não existente}, sumariamente falando, mas
-      de maneira mais completa, trata-se de um ciclo de três etapas
-      (\textbf{Figura \ref{fig:ciclotdd}}): red,  escreva um teste para o qual
-      não existe uma implementação, portanto, não deve estar passando nesse
-      momento; green, faça o mesmo passar, escrevendo o código da funcionalidade
-      pretendida; refactor, remova duplicações e melhore a legibilidade.
+      de maneira mais completa, trata-se de um ciclo de três etapas\cite[pág. x]
+      {Beck2003} (\textbf{Figura \ref{fig:ciclo-tdd}}): red,  escreva um teste
+      para o qual não existe uma implementação, portanto, não deve estar
+      passando nesse momento; green, faça o mesmo passar, escrevendo o código da
+      funcionalidade pretendida; refactor, remova duplicações e melhore a
+      legibilidade.
 
       \begin{figure}[h!]
         \centering
         \caption{Ciclo TDD}
-        \efbox{\makebox[\textwidth]{\includegraphics[width=3cm]{ciclo-tdd}}}
-        Fonte: Blog da Knowledge21\footnotemark
-        \label{fig:ciclotdd}
+        \efbox{\makebox[\textwidth]{\includegraphics[width=6cm]{ciclo-tdd}}}
+        Fonte: Próprio autor\footnotemark
+        \label{fig:ciclo-tdd}
       \end{figure}
-      \footnotetext{\cite{Ferreira2018}}
+      \footnotetext{Baseado na imagem encontrada no blog da Knowledge21
+      \cite{Ferreira2018}}
 
       Essa postura realoca o papel dos testes de uma atividade meramente focada
       em descobrir defeitos para uma posição centrada na experiência do
@@ -220,40 +222,40 @@
 
     \subsection{O jogo}
 
-    Hive\footnote{Adaptado de \cite{UltraBoardGames2020}.} é um jogo
-    abstrato de duelo, tal qual o xadrez, onde os jogadores devem usar seus
-    respectivos acervos para cercar o alvo oponente.
+      Hive\footnote{Adaptado de \cite{UltraBoardGames2020}.} é um jogo
+      abstrato de duelo, tal qual o xadrez, onde os jogadores devem usar seus
+      respectivos acervos para cercar o alvo oponente.
 
-    Cada jogador possui onze peças em formato hexagonal de cinco tipos
-    distintos, cada tipo sendo representado por um inseto: uma abelha rainha, o
-    alvo; duas aranhas; dois besouros; três gafanhotos; e, três formigas.
+      Cada jogador possui onze peças em formato hexagonal de cinco tipos
+      distintos, cada tipo sendo representado por um inseto: uma abelha rainha, o
+      alvo; duas aranhas; dois besouros; três gafanhotos; e, três formigas.
 
-    Apenas uma ação, das duas possíveis, é permitida aos jogadores executar por
-    turno: entrada e movimentação.
+      Apenas uma ação, das duas possíveis, é permitida aos jogadores executar por
+      turno: entrada e movimentação.
 
-    Quando entra em jogo, uma peça deve ser colocada adjacente a uma que já
-    está, à exceção daquela colocada no primiero turno do jogo. Ela também não
-    deve tocar nenhuma peça adversária, reservada aquela que o faz no segundo
-    turno, posto que a regra anterior deve ser atendida.
+      Quando entra em jogo, uma peça deve ser colocada adjacente a uma que já
+      está, à exceção daquela colocada no primiero turno do jogo. Ela também não
+      deve tocar nenhuma peça adversária, reservada aquela que o faz no segundo
+      turno, posto que a regra anterior deve ser atendida.
 
-    A abelha rainha deve entrar, no máximo, até a quarta rodada. Enquanto isso
-    não ocorrer, nenhuma peça irmã poderá ser movimentada.
+      A abelha rainha deve entrar, no máximo, até a quarta rodada. Enquanto isso
+      não ocorrer, nenhuma peça irmã poderá ser movimentada.
 
-    Os insetos tem movimentações diversas. A abelha rainha, um passo por vez ao
-    redor da colméia. As aranhas, três passos ao redor da colméia, sempre na
-    mesma direção iniciada. Os besouros, um passo ao redor da colméia ou acima
-    dela, e a peça sob o qual ele pousa fica imobilizada até que ele a deixe e,
-    para efeito de novas entradas, a posição ocupada assume a cor do mesmo. Os
-    gafanhotos, se movimentam sobre a colméia, iniciando de um lado e seguindo
-    em linha reta (perpendicular a aresta escolhida) até o lado oposto.
-    E,  as formigas, o fazem ao redor da colméia sem limites de passos. Tais
-    ações não podem resultar em uma colméia fragmentada, mesmo que o resultado
-    seja uma colméia intacta. As movimentações ao redor devem ser de livre
-    deslize, não sendo permitido entrar em uma posição onde isso não é possível.
+      Os insetos tem movimentações diversas. A abelha rainha, um passo por vez ao
+      redor da colméia. As aranhas, três passos ao redor da colméia, sempre na
+      mesma direção iniciada. Os besouros, um passo ao redor da colméia ou acima
+      dela, e a peça sob o qual ele pousa fica imobilizada até que ele a deixe e,
+      para efeito de novas entradas, a posição ocupada assume a cor do mesmo. Os
+      gafanhotos, se movimentam sobre a colméia, iniciando de um lado e seguindo
+      em linha reta (perpendicular a aresta escolhida) até o lado oposto.
+      E,  as formigas, o fazem ao redor da colméia sem limites de passos. Tais
+      ações não podem resultar em uma colméia fragmentada, mesmo que o resultado
+      seja uma colméia intacta. As movimentações ao redor devem ser de livre
+      deslize, não sendo permitido entrar em uma posição onde isso não é possível.
 
-    Finalmente, a abelha rainha é considerada cercada quando todos os seus lados
-    estão ocupados por alguma peça em jogo, independente de a quem elas
-    pertençam.
+      Finalmente, a abelha rainha é considerada cercada quando todos os seus lados
+      estão ocupados por alguma peça em jogo, independente de a quem elas
+      pertençam.
 
 
     \subsection{O escopo}
@@ -281,7 +283,7 @@
       aqui vamos partir da premissa que esta é nossa única demanda.
 
 
-    \input{solucao}
+    % \input{solucao}
 
 
     \input{nova-solucao}
