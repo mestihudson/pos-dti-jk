@@ -10,13 +10,33 @@
   \textbf{como um} \emph{#1}, \textbf{eu quero} \emph{#2}, \textbf{para} \emph{#3}
 }
 
-\providecommand{\figura}[3]
+\providecommand{\codigo}[5]
 {
   \begin{figure}[h]
     \centering
-    \caption{#1}
-    \lstinputlisting[numbers=none]{#2}
-    Fonte: {#3}
-    \label{fig:#2}
+    \caption{#2}
+    \lstinputlisting[#1]{#3}
+    Fonte: {#5}
+    \label{fig:#4}
   \end{figure}
+}
+
+\providecommand{\imagem}[5]
+{
+  \begin{figure}[h]
+    \centering
+    \caption{#2}
+    \efbox{
+      \makebox[\textwidth]{
+        \includegraphics[#1]{#3}
+      }
+    }
+    Fonte: #5
+    \label{fig:#4}
+  \end{figure}
+}
+
+\providecommand{\figref}[1]
+{
+  \textbf{Figura \ref{fig:#1}}
 }
