@@ -1,4 +1,4 @@
-\subsection{A nova solução}
+\subsection{A solução}
 
   Em função das limitações de tamanho e tempo, observou-se uma oportunidade para utilização de abordagem baseada em metodologias ágeis. No entanto, não é objetivo discorrer sobre o andamento de um projeto de software em sua completude mas, focar em algumas técnicas de desenvolvimento utilizadas. De tal forma, contamos com uma certa indulgência do leitor no que se refere a omissões descritivas dos caminhos gerenciais tomados.
 
@@ -49,3 +49,31 @@
     Fonte: Próprio autor
     \label{fig:esboco-estrutural}
   \end{figure}
+
+  \subsubsection{Criar conta}
+
+    Para levantar as histórias, \citeonline{Cohn2004} sugere o seguinte método: identificar os papéis; utilizá-los para construir narrativas no formato - \narrativa{papel}{fazer alguma coisa}{atingir um objetivo}; levantar os critérios de aceite de cada história.
+
+    Com a história \emph{Criar conta} chegamos a seguinte narrativa: \narrativa{visitante}{criar uma conta}{entrar e jogar uma partida}.
+
+    Também foram levantados os seguintes critérios de aceite: deve ser informado um email válido; deve ser informada uma senha de tamanho mínimo 8 (oito) e tamanho máximo 100 (cem) caracteres; não deve ser possível criar uma conta para um email que já vinculado a uma outra conta; deve constar um registro na base de dados.
+
+    Há subsídios suficientes para elencarmos os cenários\footnote{\cite{Adzic2011}} a serem trabalhados (\textbf{Figura \ref{fig:criar-conta.cenarios}}).
+
+    \figura
+      {\textbf{Cenários} elencados para a \textbf{história} \emph{Criar conta}}
+      {criar-conta.cenarios}
+      {Próprio autor}
+
+    Agora escolhemos um para detalhamento e implementação\footnote{\citeonline{Nicieja2018} apresenta um método para derivação de cenários a partir dos critérios de aceite usando a linguagem \emph{Gherkin}, que se baseia no famoso artigo de \citeonline{North2006}.}: \emph{deve ser bem sucedido}. Daí chegamos as passos da \textbf{Figura \ref{fig:criar-conta.deve-ser-bem-sucedido.cenario}}.
+
+    \figura
+      {
+        Passos do \textbf{cenário} \emph{deve ser bem sucedido} da
+        \textbf{história} \emph{Criar conta}
+      }
+      {criar-conta.deve-ser-bem-sucedido.cenario}
+      {Próprio autor}
+
+
+

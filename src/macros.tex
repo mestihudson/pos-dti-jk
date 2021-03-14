@@ -4,3 +4,19 @@
   \textit{\textbf{#1.} #2}\\
   \textbf{\textit{#3}} #4\\
 }
+
+\providecommand{\narrativa}[3]
+{
+  \textbf{como um} \emph{#1}, \textbf{eu quero} \emph{#2}, \textbf{para} \emph{#3}
+}
+
+\providecommand{\figura}[3]
+{
+  \begin{figure}[h]
+    \centering
+    \caption{#1}
+    \lstinputlisting[numbers=none]{#2}
+    Fonte: {#3}
+    \label{fig:#2}
+  \end{figure}
+}
