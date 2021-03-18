@@ -1,19 +1,3 @@
-const { Given, When, Then, Before } = require("cucumber")
-const { expect } = require("chai")
-
-const DB = require("./DB")
-const UI = require("./UI")
-
-let db
-let ui
-
-const usuario = { nome: "nome@email.com", senha: "P@ssw0rD" }
-
-Before(() => {
-  db = new DB()
-  ui = new UI()
-})
-
 Given("que eu sou um visitante", async () => {
   expect(await db.usuarioPresente(usuario.nome)).to.be.false
 })
