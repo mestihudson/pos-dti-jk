@@ -42,7 +42,7 @@
 
     Também foram levantados os seguintes critérios de aceite: deve ser informado um email válido; deve ser informada uma senha de tamanho mínimo 8 (oito) e tamanho máximo 100 (cem) caracteres; não deve ser possível criar uma conta para um email que já vinculado a uma outra conta; deve constar um registro na base de dados.
 
-    Há subsídios suficientes para elencarmos os cenários\footnote{\cite{Adzic2011}} a serem trabalhados (\figref{criar-conta.cenarios}).
+    Há elementos para elencarmos os cenários a serem trabalhados (\figref{criar-conta.cenarios}).
 
     \codigo
       {numbers=none}
@@ -59,4 +59,24 @@
       {criar-conta.deve-ser-bem-sucedido.cenario}
       {criar-conta.deve-ser-bem-sucedido.cenario}
       {Próprio autor}
+
+  Há de salientar que os passos do cenário descrito são, suficientemente, abstratos para permitir que os não-técnicos o leiam (ou, ainda, desejavelmente, os escrevam) mas não tanto que inviabilizer a sua automatização. Construímos o que \citeonline[pág. 24]{Evans2003} chama de \emph{linguagem ubíqua}. Dentre outros benefícios se pode citar a não fragilidade\footnote{\cite[pág. 93]{RoseWynneHellesoy2015} Brittle features} desses artefatos, tornando-os resilientes às alterações de implementação, enquanto o comportamento esperado se mantiver intácto. Essa característica é fundamental para alicerçar a \emph{refatoração}\footnote{cite{Fowler1999}} e, por sua vez, é condição para o alvo mirado, a \emph{arquitetura limpa}.
+
+  Retomando o esboço estrutural, o enriquecemos com os componentes que substituirão a figura humana no processo, dando vida própria a documentação\footnote{\citeonline[pág. 29]{Adzic2011} Live documentation}, donde se chega a \figref{esboco-estrutural-enriquecido}:
+
+  \imagem
+    {width=12cm}
+    {Esboço estrutural enriquecido com os componentes que permitem a automatização}
+    {esboco-estrutural-enriquecido}
+    {esboco-estrutural-enriquecido}
+    {Própio autor}
+
+  Nesse ponto usamos o que \citeonline[págs. 142 e 226]{Abelson1996} chama de \emph{wishful thinking}\footnote{Pensamento positivo, em tradução livre.} - mais precisamente o que \citeonline[pág. 45]{Astels2003} denomina \emph{programar por intenção} - para implementar os passos do cenário apresentados como se a funcionalidade pretendida já existisse. O objetivo é ser o mais claro possível sobre o que se almeja com aquela especificação, levando à \figref{criar-conta.deve-ser-bem-sucedido.passos}:
+
+  \codigo
+    {numbers=none,basicstyle=\ttfamily\tiny\linespread{0.7}}
+    {Implementação dos passos do \textbf{cenário} \emph{deve ser bem sucedido} da \textbf{história} \emph{Criar conta}}
+    {criar-conta.deve-ser-bem-sucedido.passos}
+    {criar-conta.deve-ser-bem-sucedido.passos}
+    {Própio autor}
 
