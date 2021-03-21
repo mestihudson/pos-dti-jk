@@ -51,7 +51,7 @@
       {criar-conta.cenarios}
       {Próprio autor}
 
-    Agora escolhemos um para detalhamento e implementação\footnote{\citeonline{Nicieja2018} apresenta um método para derivação de cenários a partir dos critérios de aceite usando a linguagem \emph{Gherkin}, que se baseia no famoso artigo de \citeonline{North2006}.}: \emph{deve ser bem sucedido}. Daí chegamos as passos da \figref{criar-conta.deve-ser-bem-sucedido.cenario}.
+    Agora escolhemos um deles para detalhamento e implementação\footnote{\citeonline{Nicieja2018} apresenta um método para derivação de cenários a partir dos critérios de aceite usando a linguagem \emph{Gherkin}, que se baseia no famoso artigo de \citeonline{North2006}.}: \emph{deve ser bem sucedido}. Daí chegamos as passos da \figref{criar-conta.deve-ser-bem-sucedido.cenario}.
 
     \codigo
       {numbers=none}
@@ -60,9 +60,11 @@
       {criar-conta.deve-ser-bem-sucedido.cenario}
       {Próprio autor}
 
+  Essa estrutura se baseia na seguinte ideia: o passo identificado por \textbf{dado} define o \emph{contexto} - pré-condição - onde a \emph{ação} (\textbf{quando}) deve acontecer para que o \emph{resultado esperado} - pós-condição - (\textbf{então}) seja observado.
+
   Há de salientar que os passos do cenário descrito são, suficientemente, abstratos para permitir que os não-técnicos o leiam (ou, ainda, desejavelmente, os escrevam) mas não tanto que inviabilizer a sua automatização. Construímos o que \citeonline[pág. 24]{Evans2003} chama de \emph{linguagem ubíqua}. Dentre outros benefícios se pode citar a não fragilidade\footnote{\cite[pág. 93]{RoseWynneHellesoy2015} Brittle features} desses artefatos, tornando-os resilientes às alterações de implementação, enquanto o comportamento esperado se mantiver intácto. Essa característica é fundamental para alicerçar a \emph{refatoração}\footnote{cite{Fowler1999}} e, por sua vez, é condição para o alvo mirado, a \emph{arquitetura limpa}.
 
-  Retomando o esboço estrutural, o enriquecemos com os componentes que substituirão a figura humana no processo, dando vida própria a documentação\footnote{\citeonline[pág. 29]{Adzic2011} Live documentation}, donde se chega a \figref{esboco-estrutural-enriquecido}:
+  Retomando o esboço estrutural, o enriquecemos com os componentes que substituirão a figura humana no processo, dando vida própria a documentação\footnote{\citeonline[pág. 29]{Adzic2011} Live documentation}, donde se chega a \figref{esboco-estrutural-enriquecido}.
 
   \imagem
     {width=12cm}
@@ -71,7 +73,16 @@
     {esboco-estrutural-enriquecido}
     {Própio autor}
 
-  Nesse ponto usamos o que \citeonline[págs. 142 e 226]{Abelson1996} chama de \emph{wishful thinking}\footnote{Pensamento positivo, em tradução livre.} - mais precisamente o que \citeonline[pág. 45]{Astels2003} denomina \emph{programar por intenção} - para implementar os passos do cenário apresentados como se a funcionalidade pretendida já existisse. O objetivo é ser o mais claro possível sobre o que se almeja com aquela especificação, levando à \figref{criar-conta.deve-ser-bem-sucedido.passos}:
+  Existem muitos mitos em torno das metodologias ágeis, e uma delas é a não existência de modelagem. Essa falsa crença se dá, muitas vezes, por uma noção equivocada de que documentação e modelos são equivalentes. \citeonline{Ambler2002} esses mitos e mostra que essa atividade é, além de possível, essencial para um bom projeto de software. Isso nos permite, por exemplo, rabiscar uma solução para o cenário descrito, como pode ser observado na \figref{modelo-solucao.criar-conta-deve-ser-bem-sucedido.jpeg}.
+
+  \imagem
+    {width=12cm}
+    {Modelo visual para solucionar o \textbf{cenário} \emph{deve ser bem sucedido} da \textbf{história} \emph{Criar conta}}
+    {modelo-solucao.criar-conta-deve-ser-bem-sucedido.jpeg}
+    {modelo-solucao.criar-conta-deve-ser-bem-sucedido.jpeg}
+    {Própio autor}
+
+  Esse ponto é auxiliado pelo que \citeonline[págs. 142 e 226]{Abelson1996} chama de \emph{wishful thinking}\footnote{Pensamento positivo, em tradução livre.} - mais precisamente o que \citeonline[pág. 45]{Astels2003} denomina \emph{programar por intenção} - para implementar os passos do cenário apresentados como se a funcionalidade pretendida já existisse. O objetivo é ser o mais claro possível sobre o que se almeja com aquela especificação, o resultado pode ser visto na \figref{criar-conta.deve-ser-bem-sucedido.passos}.
 
   \codigo
     {numbers=none, basicstyle=\ttfamily\tiny}
@@ -81,3 +92,36 @@
     {Própio autor}
 
   Essa etapa pode divergir bastante entre os diversos autores que tratam do tema, no que tange os conceitos de \emph{baby steps}\footnote{\cite[pág. 1]{Aniche2011}}, \emph{iniciar pelas verificações}, \emph{usar somente uma asserção por cenário}, \emph{não usar asserções fora da fase de verificação}. No fim, prevalecem, \emph{a familiaridade com as tecnologias empregadas}, \emph{a experiência no processo de desenvolvimento guiado por testes}, \emph{a simplicidade}\footnote{\cite[pág. TODO]{Beck2003}}, mas, principalmente, \emph{o bom senso}.
+
+  Como dito antes, o modelo londrino supõe a ciência prévia de determinados componentes da solução, de tal forma que o código da especificação funciona como uma tela de proteção no picadero de um circo funciona para os artistas do trapézio. Esse, talvez, seja o motivo de, algumas vezes, se tomar atalhos como o não uso de testes unitários em cenários em que, pela experiência, não apresentam grandes desafios. Ou seja, o desenvolvedor sabe o que quer fazer, mas para evitar horas procurando uma vírgula mal colocada, ele se utiliza da espeficifação automatizada para validar o caminho que ele está tomando. Essa mesma, lhe garantirá a não regressão de um caso, no momento em que um caminho mais elegante, internamente falando, for imaginado.
+
+  Para este cenário, em particular, vemos, claramente, 2 componentes fundamentais: entrada de dados - ui (interface de usuário, mas poderia ser uma interface de código, se nossa solução fosse destinada a outros sistemas ao invés de humanos); e, saída de dados - db (que poderia envolver outros atores, como, por exemplo, um servidor de envio de mensagens eletrônicas externo, caso fossemos exigir ativação da conta por algum link encaminhado por email).
+
+  Esperamos que, ao final da execução deste caso de teste, durante a verificação dos \emph{resultados esperados}, tenhamos um registro que nos comprove que a entrada de dados foi devidamente persistida. Isso deve ocorrer em contraposição ao \emph{contexto} do teste, em que o dito registro não deve existir. Assim nosso primeiro passo na direção da completude do cenário é a criação da consulta que faz a verificação da ausência do registro na base de dados (\figref{criar-conta-deve-ser-bem-sucedido-passo.dado}).
+
+  \codigo
+    {numbers=none, basicstyle=\ttfamily\tiny}
+    {Implementação do código de suporte do passo de contexto do cenário}
+    {criar-conta-deve-ser-bem-sucedido-passo.dado}
+    {criar-conta-deve-ser-bem-sucedido-passo.dado}
+    {Própio autor}
+
+  Para o passo que representa a ação, vemos que existem níveis de abstração, ao observar que o comando \emph{quando eu me registro}, na verdade é uma composição de 3 ações: abrir a página do formulário de registro; preencher os campos obrigatórios do mesmo (que, por si só, já é uma composição pois resume o preenchimento de muitos campos a uma única ação composta); e, finalmente, submeter essas informações pelo clique no botão \emph{registrar} (\figref{criar-conta-deve-ser-bem-sucedido-passo.quando}).
+
+  \codigo
+    {numbers=none, basicstyle=\ttfamily\tiny}
+    {Implementação do código de suporte do passo de ação do cenário}
+    {criar-conta-deve-ser-bem-sucedido-passo.quando}
+    {criar-conta-deve-ser-bem-sucedido-passo.quando}
+    {Própio autor}
+
+  Por fim, temos o passo de verificação, como já havíamos adiantado, reutilizamos o código de suporte da pré-condição que deve ter o efeito oposto nesse momento, bem como a da existência de uma mensagem de feedback do sucesso da ação (\figref{criar-conta-deve-ser-bem-sucedido-passo.entao}).
+
+  \codigo
+    {numbers=none, basicstyle=\ttfamily\tiny}
+    {Implementação do código de suporte do passo de verificação do cenário}
+    {criar-conta-deve-ser-bem-sucedido-passo.entao}
+    {criar-conta-deve-ser-bem-sucedido-passo.entao}
+    {Própio autor}
+
+  Isso conclui o trabalho de construção da rede de proteção que nos permitirá implementar a funcionalidade com a confiança de que seremos apoiados pela especificação automatizada. Desse momento em diante, podemos, inclusive, escolher a plataforma que melhor nos convier (desde que atenda aos limites mínimos impostos, que nesse caso são: uma aplicação web e um banco de dados relacional suportado pela plataforma). Ou seja, a miriade de possibilidades em que essa solução pode ser implementada é enorme. Para o nosso caso, em particular, escolhemos um frontend em React e um backend em Java/Quarkus e um banco de dados PostgreSQL.

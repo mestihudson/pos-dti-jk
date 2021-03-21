@@ -1,0 +1,17 @@
+class UI {
+  async abrir() {
+    await this.driver.get(this.url)
+  }
+
+  async preencherRegistro(email, senha) {
+    const inputEmail = await this.driver.findElement("[data-test-id='Email']")
+    await inputEmail.sendKeys(email)
+    const inputSenha = await this.driver.findElement("[data-test-id='Senha']")
+    await inputSenha.sendKeys(senha)
+  }
+
+  async registrar() {
+    const button = await this.driver.findElement("[data-test-id='Registrar']")
+    await button.click()
+  }
+}

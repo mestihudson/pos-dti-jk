@@ -1,0 +1,8 @@
+class DB {
+  async usuarioPresente(email) {
+    return await this
+      .connection
+      .query("select count(*) from usuario where email = ?", email)
+      .count() === 1
+  }
+}
