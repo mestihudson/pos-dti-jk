@@ -17,18 +17,22 @@ public class Main {
 
   @POST
   @Consumes(MediaType.APPLICATION_JSON)
-  public Response criarConta(final Usuario usuario) throws Throwable {
-    ds.getConnection().createStatement().executeUpdate(
-			String.format(
-				"insert into usuarios values (nextval('usuarios_id_seq'), '%s', '%s')",
-				usuario.email, usuario.senha
-			)
+  public Response criarConta(
+    final Usuario usuario) throws Throwable {
+    ds.getConnection().createStatement()
+      .executeUpdate(
+        String.format(
+          "insert into usuarios values (%s, '%s', '%s')",
+          "nextval('usuarios_id_seq')",
+          usuario.email,
+          usuario.senha
+        )
     );
     return Response.status(201).build();
   }
 }
-// arquivo: Usuario.java
 
+// arquivo: Usuario.java
 public class Usuario {
   public String email;
   public String senha;
