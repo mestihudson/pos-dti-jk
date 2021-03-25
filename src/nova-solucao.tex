@@ -148,3 +148,12 @@
     {solucao.db}
     {solucao.db}
     {Própio autor}
+
+  Nesse momento, guardadas as devidas proporções, já se pode dizer que o valor imediato esperado pelo patrocinador foi entregue. No entanto, existe muito trabalho pela frente para tornar o produto atraente, muitas funcionalidades precisam ser incorporadas, e como se está utilizando metodologia ágeil, as decisões sobre as histórias de usuário vindouras são tomadas quando estas estiverem sob discussão. Ao contrário do que se costuma fazer em metodologias de desenvolvimento tradicionais, onde uma tentativa de premonição dos problemas a serem enfrentados é realizada, nesse caso é fundamental adotar práticas de desenho arquitetural que permitam extender as capacidades do sistema com o mínimo de trauma possível.
+
+  Aqui entra em cena a atividade de refatoração. Ela permitirá alterar a estrutura interna do software sem que para isso se tenha que alterar o comportamento observável do mesmo. Isso só é possível porque existe uma rede de proteção chamada testes automatizados, que dirão se essa alteração maculou a forma como aquele foi especificado.
+
+  É uma excelente oportunidade, ainda, para diminuir o débito técnico em torno das práticas de testes de unidade\footnote{Deixados de lado para fins didáticos, vez que a abordagem apresentada por \citeonline{FreemanPryce2009} prevê o uso dos mesmos como forma de exercitar a paulatina chegada à solução almejada.}. Também é possível observar que a utilização de testes dessa natureza, ao tempo que garantem um melhor projeto de código para software, não são suficientes para garantir que o software de comporta como esperado - o famoso dilema \emph{fazer a coisa certa vs. fazer certo a coisa}. Essa expressão leva a dedução de que os testes de aceitação e os testes de unidade são complementares, e negligenciar qualquer deles é um caminho para o insucesso de qualquer projeto.
+
+  Essas reflexões levam aos seguintes artefatos derivados da refatoração:
+
