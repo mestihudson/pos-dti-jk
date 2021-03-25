@@ -126,28 +126,45 @@
 
   Isso conclui o trabalho de construção da rede de proteção que nos permitirá implementar a funcionalidade com a confiança de que seremos apoiados pela especificação automatizada. Desse momento em diante, podemos, inclusive, escolher a plataforma que melhor nos convier (desde que atenda aos limites mínimos impostos, que nesse caso são: uma aplicação web e um banco de dados relacional suportado pela plataforma). Ou seja, a miriade de possibilidades em que essa solução pode ser implementada é enorme. Para o nosso caso, em particular, escolhemos um frontend em React e um backend em Java/Quarkus e um banco de dados PostgreSQL.
 
-  Sem muito esforço cognitivo chegamos aos seguintes trechos de código da solução: frontend (\figref{solucao.frontend}); backend (\figref{solucao.backend}); e, banco de dados (\figref{solucao.db}).
+  Sem muito esforço cognitivo chegamos a solução apresentada na \figref{primeira-solucao}.
 
-  \codigo
-    {numbers=none, basicstyle=\ttfamily\tiny}
-    {Implementação do código da solução: frontend}
-    {solucao.frontend}
-    {solucao.frontend}
-    {Própio autor}
-
-  \codigo
-    {numbers=none, basicstyle=\ttfamily\tiny}
-    {Implementação do código da solução: backend}
-    {solucao.backend}
-    {solucao.backend}
-    {Própio autor}
-
-  \codigo
-    {numbers=none, basicstyle=\ttfamily\tiny}
-    {Implementação do código da solução: banco de dados}
-    {solucao.db}
-    {solucao.db}
-    {Própio autor}
+  \begin{figure}[h]
+    \centering
+    \caption{Primeira versão da solução do cenário}
+    \efbox{
+      \makebox[\textwidth]{
+        \begin{subfigure}[t]{0.25\textwidth}
+          \centering
+          \caption{Banco de dados}
+          \includegraphics[width=\textwidth]{criar_usuarios.sql.png}
+          \label{fig:banco de dados}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[t]{0.25\textwidth}
+          \centering
+          \caption{Frontend}
+          \includegraphics[width=\textwidth]{raiz.js.png}
+          \label{fig:frontend}
+        \end{subfigure}
+        \linebreak
+        \begin{subfigure}[t]{0.25\textwidth}
+          \centering
+          \caption{Backend: Main.java}
+          \includegraphics[width=\textwidth]{main.java.png}
+          \label{fig:backend-main}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[t]{0.25\textwidth}
+          \centering
+          \caption{Backend: Usuario.java}
+          \includegraphics[width=\textwidth]{usuario.java.png}
+          \label{fig:backend-usuario}
+        \end{subfigure}
+      }
+    }
+    Fonte: Próprio autor\footnote{Utilizando o serviço https://carbon.now.sh}
+    \label{fig:primeira-solucao}
+  \end{figure}
 
   Nesse momento, guardadas as devidas proporções, já se pode dizer que o valor imediato esperado pelo patrocinador foi entregue. No entanto, existe muito trabalho pela frente para tornar o produto atraente, muitas funcionalidades precisam ser incorporadas, e como se está utilizando metodologia ágeil, as decisões sobre as histórias de usuário vindouras são tomadas quando estas estiverem sob discussão. Ao contrário do que se costuma fazer em metodologias de desenvolvimento tradicionais, onde uma tentativa de premonição dos problemas a serem enfrentados é realizada, nesse caso é fundamental adotar práticas de desenho arquitetural que permitam extender as capacidades do sistema com o mínimo de trauma possível.
 
@@ -157,19 +174,30 @@
 
   Essas reflexões levam aos seguintes artefatos derivados da refatoração:
 
-	\begin{figure}[h]
-    \centering
-    \subfloat[\centering label 1]{{
-      \lstinputlisting
-        [numbers=none, basicstyle=\ttfamily\tiny]
-        {solucao.backend}
-    }}%
-    \qquad
-    \subfloat[\centering label 2]{{
-      \lstinputlisting
-        [numbers=none, basicstyle=\ttfamily\tiny]
-        {solucao.db}
-    }}%
-    \caption{2 Figures side by side}%
-    \label{fig:example}%
-	\end{figure}
+	% \begin{figure}[h]
+    % \centering
+    % \caption{Implementação do código do backend}%
+    % \efbox{
+      % \makebox[\textwidth]{
+        % \subfloat[\centering Main.java]{{
+          % \includegraphics
+            % [width=6cm]
+            % {main.java.png}
+        % }}
+        % \qquad
+        % \subfloat[\centering Usuario.java]{{
+          % \includegraphics
+            % [width=4cm]
+            % {usuario.java.png}
+        % }}
+        % \qquad
+        % \subfloat[\centering Usuario.java]{{
+          % \includegraphics
+            % [width=4cm]
+            % {usuario.java.png}
+        % }}
+      % }
+    % }
+    % Fonte: Próprio autor
+    % \label{fig:implementacao-backend}
+	% \end{figure}
