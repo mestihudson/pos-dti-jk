@@ -113,34 +113,13 @@
     \label{fig:suporte-cenario}
   \end{figure}
 
-  % \codigo
-  %   {numbers=none, basicstyle=\ttfamily\tiny}
-  %   {Implementação do código de suporte do passo de contexto do cenário}
-  %   {criar-conta-deve-ser-bem-sucedido-passo.dado}
-  %   {criar-conta-deve-ser-bem-sucedido-passo.dado}
-  %   {Própio autor}
-
   Para o passo que representa a ação, vemos que existem níveis de abstração, ao observar que o comando \emph{quando eu me registro}, na verdade é uma composição de 3 ações: abrir a página do formulário de registro; preencher os campos obrigatórios do mesmo (que, por si só, já é uma composição pois resume o preenchimento de muitos campos a uma única ação composta); e, finalmente, submeter essas informações pelo clique no botão \emph{registrar} (\figref{criar-conta-deve-ser-bem-sucedido-passo.quando}).
-
-  % \codigo
-  %   {numbers=none, basicstyle=\ttfamily\tiny}
-  %   {Implementação do código de suporte do passo de ação do cenário}
-  %   {criar-conta-deve-ser-bem-sucedido-passo.quando}
-  %   {criar-conta-deve-ser-bem-sucedido-passo.quando}
-  %   {Própio autor}
 
   Por fim, temos o passo de verificação, como já havíamos adiantado, reutilizamos o código de suporte da pré-condição que deve ter o efeito oposto nesse momento, bem como a da existência de uma mensagem de feedback do sucesso da ação (\figref{criar-conta-deve-ser-bem-sucedido-passo.entao}).
 
-  % \codigo
-  %   {numbers=none, basicstyle=\ttfamily\tiny}
-  %   {Implementação do código de suporte do passo de verificação do cenário}
-  %   {criar-conta-deve-ser-bem-sucedido-passo.entao}
-  %   {criar-conta-deve-ser-bem-sucedido-passo.entao}
-  %   {Própio autor}
-
   Isso conclui o trabalho de construção da rede de proteção que nos permitirá implementar a funcionalidade com a confiança de que seremos apoiados pela especificação automatizada. Desse momento em diante, podemos, inclusive, escolher a plataforma que melhor nos convier (desde que atenda aos limites mínimos impostos, que nesse caso são: uma aplicação web e um banco de dados relacional suportado pela plataforma). Ou seja, a miriade de possibilidades em que essa solução pode ser implementada é enorme. Para o nosso caso, em particular, escolhemos um frontend em React e um backend em Java/Quarkus e um banco de dados PostgreSQL.
 
-  Sem muito esforço cognitivo chegamos a solução apresentada na \figref{primeira-solucao}.
+  Sem muito esforço chegamos a solução apresentada na \figref{primeira-solucao}.
 
   \begin{figure}[h]
     \centering
@@ -180,6 +159,8 @@
     \label{fig:primeira-solucao}
   \end{figure}
 
+  Sigamos esse método para os demais cenários da \figref{criar-conta.cenarios}.
+
   Nesse momento, guardadas as devidas proporções, já se pode dizer que o valor imediato esperado pelo patrocinador foi entregue. No entanto, existe muito trabalho pela frente para tornar o produto atraente, muitas funcionalidades precisam ser incorporadas, e como se está utilizando metodologia ágeil, as decisões sobre as histórias de usuário vindouras são tomadas quando estas estiverem sob discussão. Ao contrário do que se costuma fazer em metodologias de desenvolvimento tradicionais, onde uma tentativa de premonição dos problemas a serem enfrentados é realizada, nesse caso é fundamental adotar práticas de desenho arquitetural que permitam extender as capacidades do sistema com o mínimo de trauma possível.
 
   Aqui entra em cena a atividade de refatoração. Ela permitirá alterar a estrutura interna do software sem que para isso se tenha que alterar o comportamento observável do mesmo. Isso só é possível porque existe uma rede de proteção chamada testes automatizados, que dirão se essa alteração maculou a forma como aquele foi especificado.
@@ -188,30 +169,3 @@
 
   Essas reflexões levam aos seguintes artefatos derivados da refatoração:
 
-	% \begin{figure}[h]
-    % \centering
-    % \caption{Implementação do código do backend}%
-    % \efbox{
-      % \makebox[\textwidth]{
-        % \subfloat[\centering Main.java]{{
-          % \includegraphics
-            % [width=6cm]
-            % {main.java.png}
-        % }}
-        % \qquad
-        % \subfloat[\centering Usuario.java]{{
-          % \includegraphics
-            % [width=4cm]
-            % {usuario.java.png}
-        % }}
-        % \qquad
-        % \subfloat[\centering Usuario.java]{{
-          % \includegraphics
-            % [width=4cm]
-            % {usuario.java.png}
-        % }}
-      % }
-    % }
-    % Fonte: Próprio autor
-    % \label{fig:implementacao-backend}
-	% \end{figure}
