@@ -2,7 +2,7 @@
 
   Em função das limitações de tamanho e tempo, observou-se uma oportunidade para utilização de abordagem baseada em metodologias ágeis. No entanto, não é objetivo discorrer sobre o andamento de um projeto de software em sua completude mas, focar em algumas técnicas de desenvolvimento utilizadas. De tal forma, contamos com uma certa indulgência do leitor no que se refere a omissões descritivas dos caminhos gerenciais tomados.
 
-  Usando \emph{histórias de usuário} como método de requisitos observamos a existência de muitas delas, de tal forma que se faz necessário organizar as mesmas dentro de um fluxo de capacidade mínimo \footnote{\citeonline{Patton2014} apresentam uma técnica, \emph{Mapeamento de Histórias de Usuário}, bastante útil para identificar fluxos e definir sua importância, em particular para o contexto em que não existe um proprietário de projeto - PO - capaz de priorizar as histórias que mais lhe agregam valor.} para completar as intenções firmadas no escopo. Daí se chega à \figref{mapeamento-historias-usuario}, onde se observa que 7 histórias são essenciais: \emph{criar conta; entrar; sair; chamar partida; atender chamado para partida; colocar peça em jogo; e, movimentar peça}. Sentimos, por experiência, que a última tem tendência para um \emph{épico}\footnote{\cite[pág. 6]{Cohn2004}}, por si só, mas,  para evitar a \emph{paralisia de análise}\footnote{\cite[pág. 71]{Pugh2011}}, vamos procrastinar a decisão de dividí-la\footnote{\cite[pág. 24]{Cohn2004}}, até que lidemos com ela especificamente.
+  Usando \emph{histórias de usuário} como método de requisitos observamos a existência de muitas delas, de tal forma que se faz necessário organizar as mesmas dentro de um fluxo de capacidade mínimo \footnote{\citeonline{Patton2014} apresentam uma técnica, \emph{Mapeamento de Histórias de Usuário}, bastante útil para identificar fluxos e definir sua importância, em particular para o contexto em que não existe um proprietário de projeto - PO - capaz de priorizar as histórias que mais lhe agregam valor.} para completar as intenções firmadas no escopo. Daí se chega à \figref{mapeamento-historias-usuario}, onde se observa que 7 histórias são essenciais: \emph{criar conta; entrar; sair; chamar partida; atender chamado para partida; colocar peça em jogo; e, movimentar peça}. Isso define a abrangência do lançamento\footnote{Do inglês, \textbf{release}}. Sentimos, por experiência, que a última tem tendência para um \emph{épico}\footnote{\cite[pág. 6]{Cohn2004}}, por si só, mas,  para evitar a \emph{paralisia de análise}\footnote{\cite[pág. 71]{Pugh2011}}, vamos procrastinar a decisão de dividí-la\footnote{\cite[pág. 24]{Cohn2004}}, até que lidemos com ela especificamente. Esse sentimento também nos ajuda a escolher, para a primeira interação, a história de usuário \emph{Criar conta}.
 
   \imagem
     {width=16cm}
@@ -34,35 +34,24 @@
     {esboco-estrutural}
     {Próprio autor}
 
-  \subsubsection{Criar conta}
+  Para levantar as histórias, \citeonline{Cohn2004} sugere o seguinte método: identificar os papéis; utilizá-los para construir narrativas no formato \emph{Connextra}\footnote{\citeonline{Connextra2001} propõs um modelo baseado na tríade \emph{papel-funcionalidade-benefício} ou, mais explicitamente, \narrativa{papel}{uma funcionalidade}{conseguir um benefício}}; levantar os critérios de aceite de cada história.
 
-    Para levantar as histórias, \citeonline{Cohn2004} sugere o seguinte método: identificar os papéis; utilizá-los para construir narrativas no formato - \narrativa{papel}{fazer alguma coisa}{atingir um objetivo}; levantar os critérios de aceite de cada história.
+  Com a história \emph{Criar conta} chegamos a seguinte narrativa: \narrativa{visitante}{criar uma conta}{entrar e jogar uma partida}.
 
-    Com a história \emph{Criar conta} chegamos a seguinte narrativa: \narrativa{visitante}{criar uma conta}{entrar e jogar uma partida}.
+  Também foram levantados os seguintes critérios de aceite: deve ser informado um email válido; deve ser informada uma senha de tamanho mínimo 8 (oito) e tamanho máximo 100 (cem) caracteres; não deve ser possível criar uma conta para um email que já vinculado a uma outra conta; deve constar um registro na base de dados.
 
-    Também foram levantados os seguintes critérios de aceite: deve ser informado um email válido; deve ser informada uma senha de tamanho mínimo 8 (oito) e tamanho máximo 100 (cem) caracteres; não deve ser possível criar uma conta para um email que já vinculado a uma outra conta; deve constar um registro na base de dados.
+  Já há elementos para elencarmos os cenários a serem trabalhados (\figref{criar-conta.cenarios}). Também é possível detalhar os passos de cada um deles usando o método sugerido por \citeonline{Nicieja2018} para derivação a partir dos critérios de aceite. O formato, \emph{Gherkin}, se baseia no artigo de \citeonline{North2006}.
 
-    Há elementos para elencarmos os cenários a serem trabalhados (\figref{criar-conta.cenarios}).
+  \imagem
+    {width=10cm}
+    {\textbf{Cenários} elencados para a \textbf{história} \emph{Criar conta}}
+    {criar-conta.feature.png}
+    {criar-conta.cenarios}
+    {Próprio autor}
 
-    \codigo
-      {numbers=none}
-      {\textbf{Cenários} elencados para a \textbf{história} \emph{Criar conta}}
-      {criar-conta.cenarios}
-      {criar-conta.cenarios}
-      {Próprio autor}
+  Essa estrutura se alicerça na seguinte ideia: o passo identificado por \textbf{Dado} define o \emph{contexto} - pré-condição - onde a \emph{ação} (\textbf{Quando}) deve acontecer para que o \emph{resultado esperado} - pós-condição - (\textbf{Então}) seja observado.
 
-    Agora escolhemos um deles para detalhamento e implementação\footnote{\citeonline{Nicieja2018} apresenta um método para derivação de cenários a partir dos critérios de aceite usando a linguagem \emph{Gherkin}, que se baseia no famoso artigo de \citeonline{North2006}.}: \emph{deve ser bem sucedido}. Daí chegamos as passos da \figref{criar-conta.deve-ser-bem-sucedido.cenario}.
-
-    \codigo
-      {numbers=none}
-      {Passos do \textbf{cenário} \emph{deve ser bem sucedido} da \textbf{história} \emph{Criar conta}}
-      {criar-conta.deve-ser-bem-sucedido.cenario}
-      {criar-conta.deve-ser-bem-sucedido.cenario}
-      {Próprio autor}
-
-  Essa estrutura se baseia na seguinte ideia: o passo identificado por \textbf{dado} define o \emph{contexto} - pré-condição - onde a \emph{ação} (\textbf{quando}) deve acontecer para que o \emph{resultado esperado} - pós-condição - (\textbf{então}) seja observado.
-
-  Há de salientar que os passos do cenário descrito são, suficientemente, abstratos para permitir que os não-técnicos o leiam (ou, ainda, desejavelmente, os escrevam) mas não tanto que inviabilizer a sua automatização. Construímos o que \citeonline[pág. 24]{Evans2003} chama de \emph{linguagem ubíqua}. Dentre outros benefícios se pode citar a não fragilidade\footnote{\cite[pág. 93]{RoseWynneHellesoy2015} Brittle features} desses artefatos, tornando-os resilientes às alterações de implementação, enquanto o comportamento esperado se mantiver intácto. Essa característica é fundamental para alicerçar a \emph{refatoração}\footnote{cite{Fowler1999}} e, por sua vez, é condição para o alvo mirado, a \emph{arquitetura limpa}.
+  Há de salientar que os passos dos cenários descritos são, suficientemente, abstratos para permitir que os não-técnicos o leiam (ou, ainda, desejavelmente, os escrevam) mas não tanto que inviabilizar a sua automatização. Construímos o que \citeonline[pág. 24]{Evans2003} chama de \emph{linguagem ubíqua}. Dentre outros benefícios se pode citar a não fragilidade\footnote{\cite[pág. 93]{RoseWynneHellesoy2015} Do inglês, \textbf{brittle features}} desses artefatos, tornando-os resilientes às alterações de implementação, enquanto o comportamento esperado se mantiver intacto. Essa característica é essencial para subsidiar a \emph{refatoração}\footnote{cite{Fowler1999}} e, por sua vez, é condição para o alvo mirado, a \emph{arquitetura limpa}.
 
   Retomando o esboço estrutural, o enriquecemos com os componentes que substituirão a figura humana no processo, dando vida própria a documentação\footnote{\citeonline[pág. 29]{Adzic2011} Live documentation}, donde se chega a \figref{esboco-estrutural-enriquecido}.
 
@@ -73,7 +62,7 @@
     {esboco-estrutural-enriquecido}
     {Própio autor}
 
-  Existem muitos mitos em torno das metodologias ágeis, e uma delas é a não existência de modelagem. Essa falsa crença se dá, muitas vezes, por uma noção equivocada de que documentação e modelos são equivalentes. \citeonline{Ambler2002} esses mitos e mostra que essa atividade é, além de possível, essencial para um bom projeto de software. Isso nos permite, por exemplo, rabiscar uma solução para o cenário descrito, como pode ser observado na \figref{modelo-solucao.criar-conta-deve-ser-bem-sucedido.jpeg}.
+  Existem muitos mitos em torno das metodologias ágeis, e uma delas é a não existência de modelagem. Essa falsa crença se dá, muitas vezes, por uma noção equivocada de que documentação e modelos são equivalentes. \citeonline{Ambler2002} desconstrói esses mitos e mostra que essa atividade é, além de possível, basilar para um bom projeto de software. Isso nos permite, por exemplo, rabiscar uma solução para o cenário descrito\footnote{\citeonline[pág. 57]{Ruby2011} usa o mesmo processo para construir a solução apresentada no livro}, como pode ser observado na \figref{modelo-solucao.criar-conta-deve-ser-bem-sucedido.jpeg}.
 
   \imagem
     {width=12cm}
@@ -84,10 +73,10 @@
 
   Esse ponto é auxiliado pelo que \citeonline[págs. 142 e 226]{Abelson1996} chama de \emph{wishful thinking}\footnote{Pensamento positivo, em tradução livre.} - mais precisamente o que \citeonline[pág. 45]{Astels2003} denomina \emph{programar por intenção} - para implementar os passos do cenário apresentados como se a funcionalidade pretendida já existisse. O objetivo é ser o mais claro possível sobre o que se almeja com aquela especificação, o resultado pode ser visto na \figref{criar-conta.deve-ser-bem-sucedido.passos}.
 
-  \codigo
-    {numbers=none, basicstyle=\ttfamily\tiny}
+  \imagem
+    {width=12cm}
     {Implementação dos passos do \textbf{cenário} \emph{deve ser bem sucedido} da \textbf{história} \emph{Criar conta}}
-    {criar-conta.deve-ser-bem-sucedido.passos}
+    {implementacao.cenario.js.png}
     {criar-conta.deve-ser-bem-sucedido.passos}
     {Própio autor}
 
@@ -99,30 +88,55 @@
 
   Esperamos que, ao final da execução deste caso de teste, durante a verificação dos \emph{resultados esperados}, tenhamos um registro que nos comprove que a entrada de dados foi devidamente persistida. Isso deve ocorrer em contraposição ao \emph{contexto} do teste, em que o dito registro não deve existir. Assim nosso primeiro passo na direção da completude do cenário é a criação da consulta que faz a verificação da ausência do registro na base de dados (\figref{criar-conta-deve-ser-bem-sucedido-passo.dado}).
 
-  \codigo
-    {numbers=none, basicstyle=\ttfamily\tiny}
-    {Implementação do código de suporte do passo de contexto do cenário}
-    {criar-conta-deve-ser-bem-sucedido-passo.dado}
-    {criar-conta-deve-ser-bem-sucedido-passo.dado}
-    {Própio autor}
+  \begin{figure}[h]
+    \centering
+    \caption{Implementação do código de suporte do cenário}
+    \efbox{
+      \makebox[\textwidth]{
+        \begin{subfigure}[t]{0.5\textwidth}
+          \centering
+          \caption{Banco de dados}
+          \includegraphics[width=\textwidth]{db.js.png}
+          \label{fig:criar-conta-deve-ser-bem-sucedido-passo.dado}
+          \label{fig:criar-conta-deve-ser-bem-sucedido-passo.entao}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[t]{0.5\textwidth}
+          \centering
+          \caption{Interface de usuário}
+          \includegraphics[width=\textwidth]{ui.js.png}
+          \label{fig:criar-conta-deve-ser-bem-sucedido-passo.quando}
+        \end{subfigure}
+      }
+    }
+    Fonte: Próprio autor
+    \label{fig:suporte-cenario}
+  \end{figure}
+
+  % \codigo
+  %   {numbers=none, basicstyle=\ttfamily\tiny}
+  %   {Implementação do código de suporte do passo de contexto do cenário}
+  %   {criar-conta-deve-ser-bem-sucedido-passo.dado}
+  %   {criar-conta-deve-ser-bem-sucedido-passo.dado}
+  %   {Própio autor}
 
   Para o passo que representa a ação, vemos que existem níveis de abstração, ao observar que o comando \emph{quando eu me registro}, na verdade é uma composição de 3 ações: abrir a página do formulário de registro; preencher os campos obrigatórios do mesmo (que, por si só, já é uma composição pois resume o preenchimento de muitos campos a uma única ação composta); e, finalmente, submeter essas informações pelo clique no botão \emph{registrar} (\figref{criar-conta-deve-ser-bem-sucedido-passo.quando}).
 
-  \codigo
-    {numbers=none, basicstyle=\ttfamily\tiny}
-    {Implementação do código de suporte do passo de ação do cenário}
-    {criar-conta-deve-ser-bem-sucedido-passo.quando}
-    {criar-conta-deve-ser-bem-sucedido-passo.quando}
-    {Própio autor}
+  % \codigo
+  %   {numbers=none, basicstyle=\ttfamily\tiny}
+  %   {Implementação do código de suporte do passo de ação do cenário}
+  %   {criar-conta-deve-ser-bem-sucedido-passo.quando}
+  %   {criar-conta-deve-ser-bem-sucedido-passo.quando}
+  %   {Própio autor}
 
   Por fim, temos o passo de verificação, como já havíamos adiantado, reutilizamos o código de suporte da pré-condição que deve ter o efeito oposto nesse momento, bem como a da existência de uma mensagem de feedback do sucesso da ação (\figref{criar-conta-deve-ser-bem-sucedido-passo.entao}).
 
-  \codigo
-    {numbers=none, basicstyle=\ttfamily\tiny}
-    {Implementação do código de suporte do passo de verificação do cenário}
-    {criar-conta-deve-ser-bem-sucedido-passo.entao}
-    {criar-conta-deve-ser-bem-sucedido-passo.entao}
-    {Própio autor}
+  % \codigo
+  %   {numbers=none, basicstyle=\ttfamily\tiny}
+  %   {Implementação do código de suporte do passo de verificação do cenário}
+  %   {criar-conta-deve-ser-bem-sucedido-passo.entao}
+  %   {criar-conta-deve-ser-bem-sucedido-passo.entao}
+  %   {Própio autor}
 
   Isso conclui o trabalho de construção da rede de proteção que nos permitirá implementar a funcionalidade com a confiança de que seremos apoiados pela especificação automatizada. Desse momento em diante, podemos, inclusive, escolher a plataforma que melhor nos convier (desde que atenda aos limites mínimos impostos, que nesse caso são: uma aplicação web e um banco de dados relacional suportado pela plataforma). Ou seja, a miriade de possibilidades em que essa solução pode ser implementada é enorme. Para o nosso caso, em particular, escolhemos um frontend em React e um backend em Java/Quarkus e um banco de dados PostgreSQL.
 
