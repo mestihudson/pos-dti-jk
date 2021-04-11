@@ -199,6 +199,30 @@
 
   Isso capacita os testes isolados de funcionalidades de mais baixo nível (\figref{teste-de-unidade-email}), com o benefício de executarem de maneira celere, tendo como retaguarda os testes de mais alto nível para garantir que tais componentes se integram da forma esperada.
 
+  \begin{figure}[h]
+    \centering
+    \caption{Teste de unidade de validação de email e respectiva solução}
+    \efbox{
+      \makebox[\textwidth]{
+        \begin{subfigure}[t]{0.5\textwidth}
+          \centering
+          \caption{Teste de unidade}
+          \includegraphics[width=\textwidth]{EmailValidatorDefaultSpec.png}
+          \label{fig:EmailValidatorDefaultSpec}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[t]{0.5\textwidth}
+          \centering
+          \caption{Implementação da interface}
+          \includegraphics[width=\textwidth]{EmailValidatorDefault.png}
+          \label{fig:EmailValidatorDefault}
+        \end{subfigure}
+      }
+    }
+    Fonte: Próprio autor
+    \label{fig:teste-de-unidade-email}
+  \end{figure}
+
   Esse método ainda permite focar a atenção sobre situações que podem ser difíceis de observar quando se verifica o conjunto de maneira holística (Figura \textbf{testes de integração da api e do repositório}).
 
   A cobertura sobre a especificação é aumentada sem sacrificar o tempo de retroalimentação (Figura \textbf{testes de unidade da senha}).
