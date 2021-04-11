@@ -167,4 +167,22 @@
 
   É uma excelente oportunidade, ainda, para diminuir o débito técnico em torno das práticas de testes de unidade\footnote{Deixados de lado para fins didáticos, vez que a abordagem apresentada por \citeonline{FreemanPryce2009} prevê o uso dos mesmos como forma de exercitar a paulatina chegada à solução almejada.}. Também é possível observar que a utilização de testes dessa natureza, ao tempo que garantem um melhor projeto de código para software, não são suficientes para garantir que o mesmo de comporta como esperado - o famoso dilema \emph{fazer a coisa certa vs. fazer certo a coisa}\footnote{\emph{Doing things right} vs. \emph{Doing the right things}, segundo \citeonline{Poddar2018}, o primeiro diz sobre \emph{eficiência} enquanto o segundo se refere a \emph{efetividade}.}. Essa expressão leva a dedução de que os testes de aceitação e os testes de unidade são complementares, e negligenciar qualquer deles é um caminho para o insucesso de qualquer projeto.
 
+  Isso leva a uma ponderação entre prós e contras sobre os tipos de testes. Se por um lado os testes de ponta a ponta permitem afirmar que as funcionalidade solicitadas foram entregues conforme as especificações, também é possível observar que quanto maior é a sua quantidade mais frustrantes é a experiência de utilizá-los como ferramenta de feedback, vez que seu tempo de execução é consideravelmente maior que a de testes de unidade.
 
+  Para ser mais explícito, considere-se os cenários de exceção, da história de usuário em trabalho, onde se espera que os mesmo falhem por invalidade do email e da senha informados. É fácil perceber a necessidade de validar múltiplos valores e, provavelmente, o melhor lugar para fazê-lo não seja nos testes de funcionais, mas naqueles que não requerem acesso a recursos externos.
+
+  Também se pode tirar proveito dessa abordagem para solidificar o entendimento do cerne do negócio (Figura \textbf{testes de unidade do caso de uso})e abstrair as dependências que prestam serviços a ele. Isso capacita os testes isolados de funcionalidades de mais baixo nível (Figura \textbf{testes de unidade do email}), com o benefício de executarem de maneira celere, tendo como retaguarda os testes de mais alto nível para garantir que tais componentes se integram da forma esperada.
+
+  Esse método ainda permite focar a atenção sobre situações que podem ser difíceis de observar quando se verifica o conjunto de maneira holística (Figura \textbf{testes de integração da api e do repositório}).
+
+  A cobertura sobre a especificação é aumentada sem sacrificar o tempo de retroalimentação (Figura \textbf{testes de unidade da senha}).
+
+  Usando a proposta apresentada por \citeonline[pág. 21]{Hombergs2019}, se faz cumprir a meta de uma arquitetura que grita. Tal exigência é simples de ser visualizada pela árvora de pacotes (Figura \textbf{ávore de pacotes}).
+
+  Outro alvo da metodologia é a "lei" de referência das camadas, onde as mais externas conhecem as mais internas mas o contrário é uma violação arquitetural (Figura \textbf{arquitetura limpa}).
+
+  De maneira geral, se pode constatar que os componentes do backend formam o desenho proposto por \citeonline{Cockburn2005} (Figura \textbf{arquitetura hexagonal}) que é uma arquitera limpa, conforme \citeonline[pág. 202]{Martin2018}.
+
+  Outra liberdade que se toma, nessa solução em particular, diz respeito a estruturação do código do frontend que, em não sendo uma parte da aplicação para o qual foi delegado muita responsabilidade, foi utilizada uma divisão baseada nas definições de \citeonline{Frost2016}, seja uma \emph{página}, do ponto de vista do usuário, sejam \emph{compoenentes}, que são integrados para formar aquelas (Figura \textbf{estrutura de pacotes do frontend}).
+
+  Essa estrutura permite testar os componentes e páginas, novamente, de forma isolada (Figura \textbf{testes de unidade da página de registro}), ao passo que são resguardados pelos testes de aceitação.
