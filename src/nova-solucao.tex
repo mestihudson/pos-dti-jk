@@ -265,6 +265,30 @@
 
   A cobertura sobre a especificação é aumentada sem sacrificar o tempo de retroalimentação (Figura \textbf{testes de unidade da senha}).
 
+  \begin{figure}[h]
+    \centering
+    \caption{Teste de unidade de validação de senha e respectiva solução}
+    \efbox{
+      \makebox[\textwidth]{
+        \begin{subfigure}[t]{0.5\textwidth}
+          \centering
+          \caption{Teste de unidade}
+          \includegraphics[width=\textwidth]{SenhaValidatorDefaultSpec.png}
+          \label{fig:SenhaValidatorDefault}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[t]{0.5\textwidth}
+          \centering
+          \caption{Implementação do validador}
+          \includegraphics[width=\textwidth]{SenhaValidatorDefault.png}
+          \label{fig:SenhaValidatorDefault}
+        \end{subfigure}
+      }
+    }
+    Fonte: Próprio autor
+    \label{fig:testes-de-integracao-api-e-repositorio}
+  \end{figure}
+
   Usando a proposta apresentada por \citeonline[pág. 21]{Hombergs2019}, se faz cumprir a meta de uma arquitetura que grita. Tal exigência é simples de ser visualizada pela árvora de pacotes (Figura \textbf{ávore de pacotes}).
 
   Outro alvo da metodologia é a "lei" de referência das camadas, onde as mais externas conhecem as mais internas mas o contrário é uma violação arquitetural (Figura \textbf{arquitetura limpa}).
