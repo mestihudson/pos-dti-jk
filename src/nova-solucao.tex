@@ -327,4 +327,28 @@
 
   Outra liberdade que se toma, nessa solução em particular, diz respeito a estruturação do código do frontend que, em não sendo uma parte da aplicação para o qual foi delegado muita responsabilidade, foi utilizada uma divisão baseada nas definições de \citeonline{Frost2016}, seja uma \emph{página}, do ponto de vista do usuário, sejam \emph{compoenentes}, que são integrados para formar aquelas (\figref{ArvoreFrontend}).
 
-  Essa estrutura permite testar os componentes e páginas, novamente, de forma isolada (Figura \textbf{testes de unidade da página de registro}), ao passo que são resguardados pelos testes de aceitação.
+  Essa estrutura permite testar os componentes e páginas, novamente, de forma isolada (\figref{teste-de-unidade-de-pagina-registro}), ao passo que são resguardados pelos testes de aceitação.
+
+  \begin{figure}[h]
+    \centering
+    \caption{Teste de unidade da página de registro e respectiva solução}
+    \efbox{
+      \makebox[\textwidth]{
+        \begin{subfigure}[t]{0.5\textwidth}
+          \centering
+          \caption{Teste}
+          \includegraphics[width=\textwidth]{Registro.spec.js.png}
+          \label{fig:teste-pagina-registro}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[t]{0.5\textwidth}
+          \centering
+          \caption{Implementação}
+          \includegraphics[width=\textwidth]{Registro.js.png}
+          \label{fig:pagina-registro}
+        \end{subfigure}
+      }
+    }
+    Fonte: Próprio autor
+    \label{fig:teste-de-unidade-de-pagina-registro}
+  \end{figure}
