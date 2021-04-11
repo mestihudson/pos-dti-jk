@@ -171,7 +171,7 @@
 
   Para ser mais explícito, considere-se os cenários de exceção, da história de usuário em trabalho, onde se espera que os mesmo falhem por invalidade do email e da senha informados. É fácil perceber a necessidade de validar múltiplos valores e, provavelmente, o melhor lugar para fazê-lo não seja nos testes de funcionais, mas naqueles que não requerem acesso a recursos externos.
 
-  Também se pode tirar proveito dessa abordagem para solidificar o entendimento do cerne do negócio (\figref{teste-de-unidade-caso-de-uso})e abstrair as dependências que prestam serviços a ele. Isso capacita os testes isolados de funcionalidades de mais baixo nível (Figura \textbf{testes de unidade do email}), com o benefício de executarem de maneira celere, tendo como retaguarda os testes de mais alto nível para garantir que tais componentes se integram da forma esperada.
+  Também se pode tirar proveito dessa abordagem para solidificar o entendimento do cerne do negócio (\figref{teste-de-unidade-caso-de-uso}) e abstrair as dependências que prestam serviços a ele.
 
   \begin{figure}[h]
     \centering
@@ -196,6 +196,8 @@
     Fonte: Próprio autor
     \label{fig:teste-de-unidade-caso-de-uso}
   \end{figure}
+
+  Isso capacita os testes isolados de funcionalidades de mais baixo nível (\figref{teste-de-unidade-email}), com o benefício de executarem de maneira celere, tendo como retaguarda os testes de mais alto nível para garantir que tais componentes se integram da forma esperada.
 
   Esse método ainda permite focar a atenção sobre situações que podem ser difíceis de observar quando se verifica o conjunto de maneira holística (Figura \textbf{testes de integração da api e do repositório}).
 
