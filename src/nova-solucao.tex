@@ -223,7 +223,45 @@
     \label{fig:teste-de-unidade-email}
   \end{figure}
 
-  Esse método ainda permite focar a atenção sobre situações que podem ser difíceis de observar quando se verifica o conjunto de maneira holística (Figura \textbf{testes de integração da api e do repositório}).
+	Esse método ainda permite focar a atenção sobre situações que podem ser difíceis de observar quando se verifica o conjunto de maneira holística (\figref{testes-de-integracao-api-e-repositorio}).
+
+  \begin{figure}[h]
+    \centering
+    \caption{Teste de integração de api e repositório e respectiva solução}
+    \efbox{
+      \makebox[\textwidth]{
+        \begin{subfigure}[t]{0.25\textwidth}
+          \centering
+          \caption{Teste de api}
+          \includegraphics[width=\textwidth]{CriarContaResourceSpec.png}
+          \label{fig:CriarContaResourceSpec}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[t]{0.25\textwidth}
+          \centering
+          \caption{Implementação da api}
+          \includegraphics[width=\textwidth]{CriarContaResource.png}
+          \label{fig:CriarContaResource}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[t]{0.25\textwidth}
+          \centering
+          \caption{Teste de repositório}
+          \includegraphics[width=\textwidth]{UsuariosJdbcRepositorySpec.png}
+          \label{fig:UsuariosJdbcRepositorySpec}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[t]{0.25\textwidth}
+          \centering
+          \caption{Implementação de repositório}
+          \includegraphics[width=\textwidth]{UsuariosJdbcRepository.png}
+          \label{fig:UsuariosJdbcRepository}
+        \end{subfigure}
+      }
+    }
+    Fonte: Próprio autor
+    \label{fig:testes-de-integracao-api-e-repositorio}
+  \end{figure}
 
   A cobertura sobre a especificação é aumentada sem sacrificar o tempo de retroalimentação (Figura \textbf{testes de unidade da senha}).
 
