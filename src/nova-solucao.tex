@@ -315,7 +315,7 @@
     \label{fig:testes-de-integracao-api-e-repositorio}
   \end{figure}
 
-  Outro alvo da metodologia é a "lei" de referência das camadas, onde as mais externas conhecem as mais internas mas o contrário é uma violação arquitetural (\figref{clean-architecture}).
+  Outro alvo da metodologia é a "lei" de referência das camadas, onde as mais externas conhecem as mais internas mas o contrário é uma violação arquitetural (\figref{clean-architecture}). De maneira geral, se pode constatar que os componentes do backend formam o desenho proposto por \citeonline{Cockburn2005}, que é uma arquitera limpa, conforme \citeonline[pág. 202]{Martin2018}.
 
   \imagem
     {width=5cm}
@@ -324,8 +324,6 @@
     {clean-architecture}
     {The Clean Code Blog\footnotemark}
   \footnotetext{\cite{Martin2012}}
-
-  De maneira geral, se pode constatar que os componentes do backend formam o desenho proposto por \citeonline{Cockburn2005} (Figura \textbf{arquitetura hexagonal}) que é uma arquitera limpa, conforme \citeonline[pág. 202]{Martin2018}.
 
   Outra liberdade que se toma, nessa solução em particular, diz respeito a estruturação do código do frontend que, em não sendo uma parte da aplicação para o qual foi delegado muita responsabilidade, foi utilizada uma divisão baseada nas definições de \citeonline{Frost2016}, seja uma \emph{página}, do ponto de vista do usuário, sejam \emph{compoenentes}, que são integrados para formar aquelas (Figura \textbf{estrutura de pacotes do frontend}).
 
