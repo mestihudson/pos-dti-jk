@@ -289,7 +289,31 @@
     \label{fig:testes-de-integracao-api-e-repositorio}
   \end{figure}
 
-  Usando a proposta apresentada por \citeonline[pág. 21]{Hombergs2019}, se faz cumprir a meta de uma arquitetura que grita. Tal exigência é simples de ser visualizada pela árvora de pacotes (Figura \textbf{ávore de pacotes}).
+  Usando a proposta apresentada por \citeonline[pág. 21]{Hombergs2019}, se faz cumprir a meta de uma arquitetura que grita. Tal exigência é simples de ser visualizada pela árvora de pacotes (\figref{ArvoreBackend}).
+
+  \begin{figure}[h]
+    \centering
+    \caption{Árvore de pacotes/diretórios do frontend e backend}
+    \efbox{
+      \makebox[\textwidth]{
+        \begin{subfigure}[t]{0.5\textwidth}
+          \centering
+          \caption{Backend}
+          \includegraphics[width=\textwidth]{ArvoreBackend.png}
+          \label{fig:ArvoreBackend}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[t]{0.5\textwidth}
+          \centering
+          \caption{Frontend}
+          \includegraphics[width=\textwidth]{ArvoreFrontend.png}
+          \label{fig:ArvoreFrontend}
+        \end{subfigure}
+      }
+    }
+    Fonte: Próprio autor
+    \label{fig:testes-de-integracao-api-e-repositorio}
+  \end{figure}
 
   Outro alvo da metodologia é a "lei" de referência das camadas, onde as mais externas conhecem as mais internas mas o contrário é uma violação arquitetural (Figura \textbf{arquitetura limpa}).
 
