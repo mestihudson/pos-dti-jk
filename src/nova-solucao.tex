@@ -164,25 +164,41 @@
 
   Para ser mais explícito, considere-se os cenários de exceção, da história de usuário em trabalho, onde se espera que os mesmo falhem por invalidade do email e da senha informados. É fácil perceber a necessidade de validar múltiplos valores e, provavelmente, o melhor lugar para fazê-lo não seja nos testes de funcionais, mas naqueles que não requerem acesso a recursos externos.
 
-  Também se pode tirar proveito dessa abordagem para solidificar o entendimento do cerne do negócio (\figref{teste-de-unidade-caso-de-uso}) e abstrair as dependências que prestam serviços a ele.
+  Também se pode tirar proveito dessa abordagem para solidificar o entendimento do cerne do negócio (\figref{CriarContaServiceSpec} e \figref{CriarContaService}) e abstrair as dependências que prestam serviços a ele.
+
+  Isso capacita os testes isolados de funcionalidades de mais baixo nível (\figref{EmailValidatorDefaultSpec} e \figref{EmailValidatorDefault}), com o benefício de executarem de maneira celere, tendo como retaguarda os testes de mais alto nível para garantir que tais componentes se integram da forma esperada.
 
   \begin{figure}[h]
     \centering
-    \caption{Teste de unidade do caso de uso e respectiva solução}
+    \caption{Teste de unidade da implementação do caso de uso e da validação de email}
     \efbox{
       \makebox[\textwidth]{
-        \begin{subfigure}[t]{0.5\textwidth}
+        \begin{subfigure}[t]{0.25\textwidth}
           \centering
-          \caption{Teste de unidade}
+          \caption{}
           \includegraphics[width=\textwidth]{CriarContaServiceSpec.png}
           \label{fig:CriarContaServiceSpec}
         \end{subfigure}
         \hfill
-        \begin{subfigure}[t]{0.5\textwidth}
+        \begin{subfigure}[t]{0.25\textwidth}
           \centering
-          \caption{Implementação do caso de uso}
+          \caption{}
           \includegraphics[width=\textwidth]{CriarContaService.png}
           \label{fig:CriarContaService}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[t]{0.25\textwidth}
+          \centering
+          \caption{}
+          \includegraphics[width=\textwidth]{EmailValidatorDefaultSpec.png}
+          \label{fig:EmailValidatorDefaultSpec}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[t]{0.25\textwidth}
+          \centering
+          \caption{}
+          \includegraphics[width=\textwidth]{EmailValidatorDefault.png}
+          \label{fig:EmailValidatorDefault}
         \end{subfigure}
       }
     }
@@ -190,63 +206,37 @@
     \label{fig:teste-de-unidade-caso-de-uso}
   \end{figure}
 
-  Isso capacita os testes isolados de funcionalidades de mais baixo nível (\figref{teste-de-unidade-email}), com o benefício de executarem de maneira celere, tendo como retaguarda os testes de mais alto nível para garantir que tais componentes se integram da forma esperada.
-
-  \begin{figure}[h]
-    \centering
-    \caption{Teste de unidade de validação de email e respectiva solução}
-    \efbox{
-      \makebox[\textwidth]{
-        \begin{subfigure}[t]{0.5\textwidth}
-          \centering
-          \caption{Teste de unidade}
-          \includegraphics[width=\textwidth]{EmailValidatorDefaultSpec.png}
-          \label{fig:EmailValidatorDefaultSpec}
-        \end{subfigure}
-        \hfill
-        \begin{subfigure}[t]{0.5\textwidth}
-          \centering
-          \caption{Implementação da interface}
-          \includegraphics[width=\textwidth]{EmailValidatorDefault.png}
-          \label{fig:EmailValidatorDefault}
-        \end{subfigure}
-      }
-    }
-    Fonte: Próprio autor
-    \label{fig:teste-de-unidade-email}
-  \end{figure}
-
 	Esse método ainda permite focar a atenção sobre situações que podem ser difíceis de observar quando se verifica o conjunto de maneira holística (\figref{testes-de-integracao-api-e-repositorio}).
 
   \begin{figure}[h]
     \centering
-    \caption{Teste de integração de api e repositório e respectiva solução}
+    \caption{Teste de integração de api e repositório}
     \efbox{
       \makebox[\textwidth]{
         \begin{subfigure}[t]{0.25\textwidth}
           \centering
-          \caption{Teste de api}
+          \caption{}
           \includegraphics[width=\textwidth]{CriarContaResourceSpec.png}
           \label{fig:CriarContaResourceSpec}
         \end{subfigure}
         \hfill
         \begin{subfigure}[t]{0.25\textwidth}
           \centering
-          \caption{Implementação da api}
+          \caption{}
           \includegraphics[width=\textwidth]{CriarContaResource.png}
           \label{fig:CriarContaResource}
         \end{subfigure}
         \hfill
         \begin{subfigure}[t]{0.25\textwidth}
           \centering
-          \caption{Teste de repositório}
+          \caption{}
           \includegraphics[width=\textwidth]{UsuariosJdbcRepositorySpec.png}
           \label{fig:UsuariosJdbcRepositorySpec}
         \end{subfigure}
         \hfill
         \begin{subfigure}[t]{0.25\textwidth}
           \centering
-          \caption{Implementação de repositório}
+          \caption{}
           \includegraphics[width=\textwidth]{UsuariosJdbcRepository.png}
           \label{fig:UsuariosJdbcRepository}
         \end{subfigure}
@@ -256,92 +246,82 @@
     \label{fig:testes-de-integracao-api-e-repositorio}
   \end{figure}
 
-  A cobertura sobre a especificação é aumentada sem sacrificar o tempo de retroalimentação (Figura \textbf{testes de unidade da senha}).
-
-  \begin{figure}[h]
-    \centering
-    \caption{Teste de unidade de validação de senha e respectiva solução}
-    \efbox{
-      \makebox[\textwidth]{
-        \begin{subfigure}[t]{0.5\textwidth}
-          \centering
-          \caption{Teste de unidade}
-          \includegraphics[width=\textwidth]{SenhaValidatorDefaultSpec.png}
-          \label{fig:SenhaValidatorDefault}
-        \end{subfigure}
-        \hfill
-        \begin{subfigure}[t]{0.5\textwidth}
-          \centering
-          \caption{Implementação do validador}
-          \includegraphics[width=\textwidth]{SenhaValidatorDefault.png}
-          \label{fig:SenhaValidatorDefault}
-        \end{subfigure}
-      }
-    }
-    Fonte: Próprio autor
-    \label{fig:testes-de-integracao-api-e-repositorio}
-  \end{figure}
+  A cobertura sobre a especificação é aumentada sem sacrificar o tempo de retroalimentação (\figref{SenhaValidatorDefaultSpec} e \figref{SenhaValidatorDefault}).
 
   Usando a proposta apresentada por \citeonline[pág. 21]{Hombergs2019}, se faz cumprir a meta de uma arquitetura que grita. Tal exigência é simples de ser visualizada pela árvora de pacotes (\figref{ArvoreBackend}).
 
-  \begin{figure}[h]
-    \centering
-    \caption{Árvore de pacotes/diretórios do frontend e backend}
-    \efbox{
-      \makebox[\textwidth]{
-        \begin{subfigure}[t]{0.5\textwidth}
-          \centering
-          \caption{Backend}
-          \includegraphics[width=\textwidth]{ArvoreBackend.png}
-          \label{fig:ArvoreBackend}
-        \end{subfigure}
-        \hfill
-        \begin{subfigure}[t]{0.5\textwidth}
-          \centering
-          \caption{Frontend}
-          \includegraphics[width=\textwidth]{ArvoreFrontend.png}
-          \label{fig:ArvoreFrontend}
-        \end{subfigure}
-      }
-    }
-    Fonte: Próprio autor
-    \label{fig:arvores-de-pacotes-diretorios}
-  \end{figure}
-
-  Outro alvo da metodologia é a "lei" de referência das camadas, onde as mais externas conhecem as mais internas mas o contrário é uma violação arquitetural (\figref{clean-architecture}). De maneira geral, se pode constatar que os componentes do backend formam o desenho proposto por \citeonline{Cockburn2005}, que é uma arquitera limpa, conforme \citeonline[pág. 202]{Martin2018}.
-
-  \imagem
-    {width=10cm}
-    {Modelo de arquitetura limpa}
-    {CleanArchitecture.jpg}
-    {clean-architecture}
-    {The Clean Code Blog\footnotemark}
-  \footnotetext{\cite{Martin2012}}
-
   Outra liberdade que se toma, nessa solução em particular, diz respeito a estruturação do código do frontend que, em não sendo uma parte da aplicação para o qual foi delegado muita responsabilidade, foi utilizada uma divisão baseada nas definições de \citeonline{Frost2016}, seja uma \emph{página}, do ponto de vista do usuário, sejam \emph{compoenentes}, que são integrados para formar aquelas (\figref{ArvoreFrontend}).
 
-  Essa estrutura permite testar os componentes e páginas, novamente, de forma isolada (\figref{teste-de-unidade-de-pagina-registro}), ao passo que são resguardados pelos testes de aceitação.
+  Essa estrutura permite testar os componentes e páginas, novamente, de forma isolada (\figref{teste-pagina-registro} e \figref{pagina-registro}), ao passo que são resguardados pelos testes de aceitação.
 
   \begin{figure}[h]
     \centering
-    \caption{Teste de unidade da página de registro e respectiva solução}
+    \caption{Teste de unidade de validação de senha e da página de registro no frontend}
     \efbox{
       \makebox[\textwidth]{
-        \begin{subfigure}[t]{0.5\textwidth}
+        \begin{subfigure}[t]{0.25\textwidth}
           \centering
-          \caption{Teste}
+          \caption{}
+          \includegraphics[width=\textwidth]{SenhaValidatorDefaultSpec.png}
+          \label{fig:SenhaValidatorDefaultSpec}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[t]{0.25\textwidth}
+          \centering
+          \caption{}
+          \includegraphics[width=\textwidth]{SenhaValidatorDefault.png}
+          \label{fig:SenhaValidatorDefault}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[t]{0.25\textwidth}
+          \centering
+          \caption{}
           \includegraphics[width=\textwidth]{Registro.spec.js.png}
           \label{fig:teste-pagina-registro}
         \end{subfigure}
         \hfill
-        \begin{subfigure}[t]{0.5\textwidth}
+        \begin{subfigure}[t]{0.25\textwidth}
           \centering
-          \caption{Implementação}
+          \caption{}
           \includegraphics[width=\textwidth]{Registro.js.png}
           \label{fig:pagina-registro}
         \end{subfigure}
       }
     }
     Fonte: Próprio autor
+    \label{fig:testes-de-unidade-validacao-senha}
+  \end{figure}
+
+  Outro alvo da metodologia é a "lei" de referência das camadas, onde as mais externas conhecem as mais internas mas o contrário é uma violação arquitetural (\figref{clean-architecture}). De maneira geral, se pode constatar que os componentes do backend formam o desenho proposto por \citeonline{Cockburn2005}, que é uma arquitera limpa, conforme \citeonline[pág. 202]{Martin2018}.
+
+  \begin{figure}[h]
+    \centering
+    \caption{Árvore de pacotes e diretórios da solução e modelo de arquitetura limpa}
+    \efbox{
+      \makebox[\textwidth]{
+        \begin{subfigure}[t]{0.25\textwidth}
+          \centering
+          \caption{Frontend}
+          \includegraphics[width=\textwidth]{ArvoreBackend.png}
+          \label{fig:ArvoreBackend}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[t]{0.25\textwidth}
+          \centering
+          \caption{Backend}
+          \includegraphics[width=\textwidth]{ArvoreFrontend.png}
+          \label{fig:ArvoreFrontend}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[t]{0.5\textwidth}
+          \centering
+          \caption{Modelo}
+          \includegraphics[width=\textwidth]{CleanArchitecture.jpg}
+          \label{fig:clean-architecture}
+        \end{subfigure}
+      }
+    }
+    Fonte: Próprio autor e The Clean Code Blog\footnotemark
     \label{fig:teste-de-unidade-de-pagina-registro}
   \end{figure}
+  \footnotetext{\cite{Martin2012}}
