@@ -1,24 +1,44 @@
 % folha de aprovação
 \begin{titlepage}
-  \autor \\
-  \titulo \\
-  \subtitulo \\
-  \natureza
-  begin{center}
-  % Aprovado em: ____ / ____ / ____ \\
-  Banca Examinadora \\
-  \rule{\textwidth}{0.1pt}\\
-  \centering
-  Presidente: \orientador - \instituicaoorientador\\
-  (Orientador)\\
-  % ___________________________________ \\
-  % Membro Titular: \membrotitular1 - \instituicaomembrotitular1 \\
-  % ___________________________________ \\
-  % Membro Titular: \membrotitular2 - \instituicaomembrotitular2 \\
-  % ___________________________________ \\
-  % Membro Titular: \membrosuplente - \instituicaomembrosuplente \\
-  \local \\
-  \data \\
-  end{center}
+  \begin{center}
+    \bf{\MakeUppercase{
+      \large{\autor}\\
+      \vspace*{1cm}
+      \small{
+        \titulo\\
+        \subtitulo\\
+      }
+    }}
+  \end{center}
+  \vspace*{1cm}
+  \begin{addmargin}[5cm]{0cm}
+    \justify{
+      \hspace*{.5cm} \natureza\\
+    }
+  \end{addmargin}
+  \vspace*{0.5cm}
+  \begin{center}
+    Aprovado em: \rule{1cm}{0.1pt} / \rule{1cm}{0.1pt} / \rule{1cm}{0.1pt}\\
+    \vspace*{0.5cm}
+    Banca Examinadora\\
+    \vspace*{0.5cm}
+    \rule{\textwidth}{0.1pt}\\
+    Presidente: \orientador - \instituicaoorientador\\
+    (Orientador)\\
+    \vspace*{0.5cm}
+    \rule{\textwidth}{0.1pt}\\
+    Membro Titular: \membrotitularum - \instituicaomembrotitularum\\
+    \vspace*{0.5cm}
+    \rule{\textwidth}{0.1pt}\\
+    Membro Titular: \membrotitulardois - \instituicaomembrotitulardois\\
+    \vspace*{0.5cm}
+    \rule{\textwidth}{0.1pt}\\
+    Membro Suplente: \membrosuplente - \instituicaomembrosuplente\\
+    \vspace*{0.5cm}
+    \large{\bf{\MakeUppercase{
+      \local\\
+      \data\\
+    }}}
+  \end{center}
 \end{titlepage}
 % folha de aprovação
