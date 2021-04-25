@@ -1,0 +1,81 @@
+\section{Testes}
+
+  Se estabelecermos um marco na história da programação como sendo a parceiria entre a matemática londrina Ada Lovelace, e o, também, matemático londrino Charles Babbage\footnote{\cite{Huskey1980}}, pode-se dizer que essa disciplina possui mais de 180 anos, e com ela dois grande problemas: 1. especificar o comportamento de um software; 2. garantir que um software não possua defeitos.
+
+  No primeiro, por mais avanços que se tenha feito no campo da engenharia de software, essa é, ainda, uma área bastante desafiadora. No último, Disjkstra estatuiu que \emph{testes mostram a presença, não a ausência de defeitos} \cite[pág. 16]{Nato1969}.
+
+  Daí a necessidade de se testar \cite[pág. xxix-xxx]{Mezaros2007}: 1. paulatinamente construir conhecimento através da retroalimentação de hipóteses; 2. exaustivamente chegar a um ponto onde não é possível provar a presença de defeitos.
+
+  Testes, segundo os métodos tradicionais de desenvolvimento, são feitos em etapa posterior a sua construção, para \emph{medir qualidade}. Uma abordagem diferente daquela que deseja \emph{construir qualidade}\footnote{ \cite[pág. 7]{FarcicGarcia2015}}. Isso reverbera de maneira distinta \emph{quem} os executa: uma equipe independente daquela que construiu o software ou o próprio desenvolvedor?
+
+  \subsection{Desenvolvimento guiado por testes (tdd)}
+
+    Dentre as práticas que sustentam os métodos ágeis, o uso de testes, como uma atividade de suporte às demais, é um fato consolidado. Mas a abordagem do TDD, também conhecida por \emph{testar primeiro} é ainda mais difundida nesse  meio.
+
+    É bem corriqueiro ver profissionais se referindo à  técnica como "desenvolvimento orientado \emph{a} testes", dando a entender que seu objetivo é produzir um código que seja testável, o que é, claramente, uma consequência do seu uso. Ao passo que uma tradução que melhor exprime o conceito é "desenvolvimento orientado {por} testes".
+
+    A ideia é extremamente simples \cite[p.1]{FreemanPryce2009}: \emph{escrever um teste para um código que ainda não existente}, sumariamente falando, mas de maneira mais completa, trata-se de um ciclo de três etapas\cite[pág. x] {Beck2003} (\figref{ciclo-tdd}): vermelho,  escreva um teste para o qual não existe uma implementação, portanto, não deve estar passando nesse momento; verde, faça o mesmo passar, escrevendo o código da funcionalidade pretendida; refactore, remova duplicações e melhore a legibilidade.
+
+    \imagem
+      {width=6cm}
+      {Ciclo de tdd}
+      {ciclo-tdd}
+      {ciclo-tdd}
+      {Próprio autor\footnotemark}
+    \footnotetext{Baseado na imagem encontrada no blog da Knowledge21\cite{Ferreira2018}}
+
+    Essa postura realoca o papel dos testes de uma atividade meramente focada em descobrir defeitos para uma posição centrada na experiência do usuário, ao  \emph{orientar} a desenvolvedora no entendimento das reais necessidades dos primeiros, através de um processo dialético de construção de conhecimento \footnote{\citeonline[p.28]{Oliveira1992} sugere, ao analisar Vygotsky e o processo de formação de conceitos, que os últimos são construções culturais, internalizadas pelos indivíduos ao longo do seu processo de desenvolvimento.}.
+
+    Isso explica porque \citeonline[p.3-5]{FreemanPryce2009} colocam a prática como fundamentada em três pilares: 1. aprendizagem; 2. retroalimentação; e, 3. suporte a mudança.
+
+\section{Arquitetura de software}
+
+  A engenharia de software, enquanto disciplina da ciência dos computadores, recebe o seu primeiro nome graças a uma série de propriedades que lhe são comuns com sua "aparentada" e seu sobrenome, em função de características que lhe são peculiares.
+
+  Tal fenômeno, bastante comum nessa área do conhecimento, explica a denominação da chamada \emph{arquitetura de software} que, na ausência de uma expressão mais apropriada, toma emprestado a alcunha para conceituar uma abordagem com alto nível de abstração, que a "matéria dos dígitos binários" exige.
+
+  Vejamos a definição do verbete inicial da locução: \emph{1. arte de projetar, construir, decorar e oraganizar os espaços de uma edificação; 2. obras arquitetônicas que caracterizam uma época ou povo \footnote{\cite[p. 81]{Kury2007}}}.
+
+  Ainda, etimologicamente, a palavra remete à composição grega de \emph{   ARKHEIN} - que significa \emph{comandar}, em português - com \emph{TEKTON} - que, por sua vez, quer dizer \emph{artesão ou construtor}\footnote{\cite{ Etimologia2019}}.
+
+  Por aproximação, diz tratar-se dos dítames direcionadores de uma determinada construção. Ora, não resta dúvida, assim, que arquitetura de software são os preceitos orientadores de um sistema computacional.
+
+  \subsection{Arquitetura limpa}
+
+    Se ao vislumbrar determinada edificação é possível inferir algumas características de uma obra, seria possível realizar o mesmo exercício ao observar um "programa computacional"?
+
+    A depender da forma como um prédio é arquitetado, é factível realizar alterações funcionais sem prejuízo à estrutura, ou, ainda, sem qualquer noção do dano que tais modificações podem desencadear.
+
+    Tal qual uma arquitetura convencional e limpa \emph{grita}\footnote{\cite[p. 196]{ Martin2018}} qual é a sua motivação - eu sou uma casa, eu sou uma biblioteca, eu sou uma fábrica, etc. - uma arquitetura de software limpa brada \emph{o quê ela é} e \emph{o que é possível fazer em seu contexto}.
+
+\section{Como tdd auxilia na processo de chegada a uma arquitetura limpa?}
+
+  É fácil encontrar muitas similaridades entre as arquiteturas citadas, mas existe um quesito que pesa a favor da última: software, como o nome sugere, soft (em português: flexível, suave) é um bem intangível, cuja construção, guardadas as devidas proporções e contextos, não oferece os mesmos riscos, por vezes irreparáveis, que a primeira.
+
+  Desenvolvimento orientado por testes privilegia uma conduta que permite definir as funções essenciais do sistema, implementá-las da maneira mais simplória conhecida e através de sucessivas modificações, amparadas por uma rede de proteção que previne regressões, alcançar um modelo que expressa, claramente, quais seus objetivos e permite uma evoluçãi sustentável do produto.
+
+\section{O estudo de caso}
+
+  \subsection{O jogo}
+
+    Hive\footnote{Adaptado de \cite{UltraBoardGames2020}.} é um jogo abstrato de duelo, tal qual o xadrez, onde os jogadores devem usar seus respectivos acervos para cercar o alvo oponente.
+
+    Cada jogador possui onze peças em formato hexagonal de cinco tipos distintos, cada tipo sendo representado por um inseto: uma abelha rainha, o alvo; duas aranhas; dois besouros; três gafanhotos; e, três formigas.
+
+    Apenas uma ação, das duas possíveis, é permitida aos jogadores executar por turno: entrada e movimentação.
+
+    Quando entra em jogo, uma peça deve ser colocada adjacente a uma que já está, à exceção daquela colocada no primiero turno do jogo. Ela também não deve tocar nenhuma peça adversária, reservada aquela que o faz no segundo turno, posto que a regra anterior deve ser atendida.
+
+    A abelha rainha deve entrar, no máximo, até a quarta rodada. Enquanto isso não ocorrer, nenhuma peça irmã poderá ser movimentada.
+
+    Os insetos tem movimentações diversas. A abelha rainha, um passo por vez ao redor da colméia. As aranhas, três passos ao redor da colméia, sempre na mesma direção iniciada. Os besouros, um passo ao redor da colméia ou acima dela, e a peça sob o qual ele pousa fica imobilizada até que ele a deixe e, para efeito de novas entradas, a posição ocupada assume a cor do mesmo. Os gafanhotos, se movimentam sobre a colméia, iniciando de um lado e seguindo em linha reta (perpendicular a aresta escolhida) até o lado oposto. E,  as formigas, o fazem ao redor da colméia sem limites de passos. Tais ações não podem resultar em uma colméia fragmentada, mesmo que o resultado seja uma colméia intacta. As movimentações ao redor devem ser de livre deslize, não sendo permitido entrar em uma posição onde isso não é possível.
+
+    Finalmente, a abelha rainha é considerada cercada quando todos os seus lados estão ocupados por alguma peça em jogo, independente de a quem elas pertençam.
+
+  \subsection{O escopo}
+
+    O objetivo é construir uma aplicação onde um usuário qualquer possa se registrar para adquirir acesso. Uma vez autenticado ele pode propor ou responder a uma proposta de partida com um adversário que tenha realizado o mesmo caminho. E, obviamente, desempenhar uma partida. Deve, ainda, ser possível, organizar torneios, visualizar uma lista de classificação dos jogadores por suas respectivas pontuações e, apenas, observar uma partida, sem dela participar. É desejável que o registro e a autenticação possam ser realizados utilizando os mecanismos ofertados pelo Google e Facebook, bem como retomar uma partida que foi explicita ou implicitamente suspensa (um dos jogadores pode ter perdido a conexão por problemas em sua rede). Os jogadores devem ser capazes de convidar um adversário específico para uma partida. Também seria interessante que os usuários possam recuperar suas senhas que, ocasionalmente, possam vir a esquecer ou alterar informações sobre si (como nome que é apresentado aos demais, imagem de perfil, etc) além, é claro, de poder remover sua conta, caso não tenha mais interesse no serviço.
+
+    Essa é uma descrição hipotética de necessidade inicial de um interessado em patrocinar um projeto dessa qualidade. Claro, em uma situação real, muitos outros detalhes deveriam ser capturados para refinar a solução, mas aqui vamos partir da premissa que esta é nossa única demanda.
+
+  \input{nova-solucao}
