@@ -46,7 +46,16 @@
 
     A depender da forma como um prédio é arquitetado, é factível realizar alterações funcionais sem prejuízo à estrutura, ou, ainda, sem qualquer noção do dano que tais modificações podem desencadear.
 
-    Tal qual uma arquitetura convencional e limpa \emph{grita}\footnote{\cite[p. 196]{ Martin2018}} qual é a sua motivação - eu sou uma casa, eu sou uma biblioteca, eu sou uma fábrica, etc. - uma arquitetura de software limpa brada \emph{o quê ela é} e \emph{o que é possível fazer em seu contexto}.
+    É esperado que a observação da plata baixa de uma edificação transmita informações suficientes para identificar do que se trata - uma casa, uma biblioteca, uma fábrica, etc. Essa é uma qualidade também desejável em um software, que alguns poucos artefatos sejam capazes de esclarecer o proprósito do mesmo. Ela deve \emph{gritar}.
+
+  \citacaolonga
+    {Então o que a arquitetura de sua aplicação grita? Quando você olha para o topo da sua estrutura de diretórios, e os arquivos fonte no pacote de mais alto nível, eles gritam "Sistema de Plano de Saúde," ou "Sistema de Contabilidade," ou "Sistema de Gerenciamento de Inventário"? Ou eles gritam "Rails," ou "Spring/Hibernate," ou "ASP"?}
+    {\cite[p. 196, tradução nossa]{Martin2018}}
+
+  Muitos autores, ao longo de seus anos de experiência com desenvolvimento de software, estabeleceram suas próprias noções de arquitetura de sistemas, e apesar de terem nomes distintos - \emph{BCE}\cite{Jacobson1992}, \emph{Hexagonal}\cite{Cockburn2005}, \emph{Onion}\cite{Palermo2008}, \emph{DCI}\cite{Coplien2010} - elas compartilham características que as enquadram no conceito de \emph{Arquitetura Limpa}\cite{Martin2018}, notoriamente: \emph{Independente de frameworks}, \emph{Testável}, \emph{Independente de interface de usuário}, \emph{Independente de banco de dados} e {Independente de qualquer agente externo}.
+
+  Elas também guardam a chamada \emph{Regra da Dependência}, onde, segundo \citeonline[p. 197, tradução nossa]{Martin2018} "as dependências do código fonte deve apontar somente na direção do centro do círculo, rumo as políticas de alto nível", como pode ser observado na \figref{clean-architecture}.
+
   \imagem
     {scale=0.4}
     {Modelo de Arquitetura Limpa}
