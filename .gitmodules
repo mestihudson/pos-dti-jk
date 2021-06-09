@@ -1,3 +1,3 @@
 [submodule "hive"]
-	path = hive
-	url = /Users/mestihudson/Development/git/hive
+  path = hive
+  url = git@github.com:mestihudson/hive.git
