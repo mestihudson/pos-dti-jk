@@ -1,12 +1,12 @@
 \section{Testes}
 
-  Se estabelecermos um marco na história da programação como sendo a parceiria entre a matemática londrina Ada Lovelace, e o, também, matemático londrino Charles Babbage\footnote{\cite{Huskey1980}}, pode-se dizer que essa disciplina possui mais de 180 anos, e com ela dois grande problemas: 1. especificar o comportamento de um software; 2. garantir que um software não possua defeitos.
+  Se estabelecermos um marco na história da programação como sendo a parceiria entre a matemática londrina Ada Lovelace, e o, também, matemático londrino Charles Babbage \cite{Huskey1980}, pode-se dizer que essa disciplina possui mais de 180 anos, e com ela dois grande problemas: 1. especificar o comportamento de um software; 2. garantir que um software não possua defeitos.
 
   No primeiro, por mais avanços que se tenha feito no campo da engenharia de software, essa é, ainda, uma área bastante desafiadora. No último, Disjkstra estatuiu que \emph{testes mostram a presença, não a ausência de defeitos} \cite[pág. 16]{Nato1969}.
 
   Daí a necessidade de se testar \cite[pág. xxix-xxx]{Mezaros2007}: 1. paulatinamente construir conhecimento através da retroalimentação de hipóteses; 2. exaustivamente chegar a um ponto onde não é possível provar a presença de defeitos.
 
-  Testes, segundo os métodos tradicionais de desenvolvimento, são feitos em etapa posterior a sua construção, para \emph{medir qualidade}. Uma abordagem diferente daquela que deseja \emph{construir qualidade}\footnote{ \cite[pág. 7]{FarcicGarcia2015}}. Isso reverbera de maneira distinta \emph{quem} os executa: uma equipe independente daquela que construiu o software ou o próprio desenvolvedor?
+  Testes, segundo os métodos tradicionais de desenvolvimento, são feitos em etapa posterior a sua construção, para \emph{medir qualidade}. Uma abordagem diferente daquela que deseja \emph{construir qualidade} \cite[pág. 7]{FarcicGarcia2015}. Isso reverbera de maneira distinta \emph{quem} os executa: uma equipe independente daquela que construiu o software ou o próprio desenvolvedor?
 
   \subsection{Desenvolvimento guiado por testes (tdd)}
 
@@ -14,7 +14,7 @@
 
     É bem corriqueiro ver profissionais se referindo à  técnica como "desenvolvimento orientado \emph{a} testes", dando a entender que seu objetivo é produzir um código que seja testável, o que é, claramente, uma consequência do seu uso. Ao passo que uma tradução que melhor exprime o conceito é "desenvolvimento orientado {por} testes".
 
-    A ideia é extremamente simples \cite[p.1]{FreemanPryce2009}: \emph{escrever um teste para um código que ainda não existente}, sumariamente falando, mas de maneira mais completa, trata-se de um ciclo de três etapas\cite[pág. x] {Beck2003} (\figref{ciclo-tdd}): vermelho,  escreva um teste para o qual não existe uma implementação, portanto, não deve estar passando nesse momento; verde, faça o mesmo passar, escrevendo o código da funcionalidade pretendida; refactore, remova duplicações e melhore a legibilidade.
+    A ideia é extremamente simples \cite[p.1]{FreemanPryce2009}: \emph{escrever um teste para um código que ainda não existente}, sumariamente falando, mas de maneira mais completa, trata-se de um ciclo de três etapas \cite[pág. x]{Beck2003} - \figref{ciclo-tdd}: vermelho,  escreva um teste para o qual não existe uma implementação, portanto, não deve estar passando nesse momento; verde, faça o mesmo passar, escrevendo o código da funcionalidade pretendida; refactore, remova duplicações e melhore a legibilidade.
 
     \imagem
       {scale=0.75}
@@ -22,9 +22,9 @@
       {ciclo-tdd.png}
       {ciclo-tdd}
       {Próprio autor\footnotemark}
-    \footnotetext{Baseado na imagem encontrada no blog da Knowledge21\cite{Ferreira2018}}
+    \footnotetext{Baseado na imagem encontrada no blog da Knowledge21 \url{https://knowledge21.com.br/blog/qualidade-de-software-com-tdd-test-driven-development/}}
 
-    Essa postura realoca o papel dos testes de uma atividade meramente focada em descobrir defeitos para uma posição centrada na experiência do usuário, ao  \emph{orientar} a desenvolvedora no entendimento das reais necessidades dos primeiros, através de um processo dialético de construção de conhecimento \footnote{\citeonline[p.28]{Oliveira1992} sugere, ao analisar Vygotsky e o processo de formação de conceitos, que os últimos são construções culturais, internalizadas pelos indivíduos ao longo do seu processo de desenvolvimento.}.
+    Essa postura realoca o papel dos testes de uma atividade meramente focada em descobrir defeitos para uma posição centrada na experiência do usuário, ao \emph{orientar} a desenvolvedora no entendimento das reais necessidades dos primeiros, através de um processo dialético de construção de conhecimento \footnote{\citeonline[p.28]{Oliveira1992} sugere, ao analisar Vygotsky e o processo de formação de conceitos, que os últimos são construções culturais, internalizadas pelos indivíduos ao longo do seu processo de desenvolvimento.}.
 
     Isso explica porque \citeonline[p.3-5]{FreemanPryce2009} colocam a prática como fundamentada em três pilares: 1. aprendizagem; 2. retroalimentação; e, 3. suporte a mudança.
 
@@ -34,9 +34,9 @@
 
   Tal fenômeno, bastante comum nessa área do conhecimento, explica a denominação da chamada \emph{arquitetura de software} que, na ausência de uma expressão mais apropriada, toma emprestado a alcunha para conceituar uma abordagem com alto nível de abstração, que a "matéria dos dígitos binários" exige.
 
-  Vejamos a definição do verbete inicial da locução: \emph{1. arte de projetar, construir, decorar e oraganizar os espaços de uma edificação; 2. obras arquitetônicas que caracterizam uma época ou povo \footnote{\cite[p. 81]{Kury2007}}}.
+  Vejamos a definição do verbete inicial da locução: \emph{1. arte de projetar, construir, decorar e oraganizar os espaços de uma edificação; 2. obras arquitetônicas que caracterizam uma época ou povo} \cite[pág. 81]{Kury2007}.
 
-  Ainda, etimologicamente, a palavra remete à composição grega de \emph{   ARKHEIN} - que significa \emph{comandar}, em português - com \emph{TEKTON} - que, por sua vez, quer dizer \emph{artesão ou construtor}\footnote{\cite{ Etimologia2019}}.
+  Ainda, etimologicamente, a palavra remete à composição grega de \emph{ARKHEIN} - que significa \emph{comandar}, em português - com \emph{TEKTON} - que, por sua vez, quer dizer \emph{artesão ou construtor}\footnote{Segundo o sítio "Etimologia - Origem do Conceito: Etimologia de Arquitetura". Disponível em: \url{https://etimologia.com.br/arquitetura/}. Acesso em: 6 de janeiro de 2021.}.
 
   Por aproximação, diz tratar-se dos dítames direcionadores de uma determinada construção. Ora, não resta dúvida, assim, que arquitetura de software são os preceitos orientadores de um sistema computacional.
 
@@ -50,7 +50,7 @@
 
   \citacaolonga
     {Então o que a arquitetura de sua aplicação grita? Quando você olha para o topo da sua estrutura de diretórios, e os arquivos fonte no pacote de mais alto nível, eles gritam "Sistema de Plano de Saúde," ou "Sistema de Contabilidade," ou "Sistema de Gerenciamento de Inventário"? Ou eles gritam "Rails," ou "Spring/Hibernate," ou "ASP"?}
-    {\cite[p. 196, tradução nossa]{Martin2018}}
+    {\cite[pág. 196, tradução nossa]{Martin2018}}
 
   Muitos autores, ao longo de seus anos de experiência com desenvolvimento de software, estabeleceram suas próprias noções de arquitetura de sistemas, e apesar de terem nomes distintos - \emph{BCE}\cite{Jacobson1992}, \emph{Hexagonal}\cite{Cockburn2005}, \emph{Onion}\cite{Palermo2008}, \emph{DCI}\cite{Coplien2010} - elas compartilham características que as enquadram no conceito de \emph{Arquitetura Limpa}\cite{Martin2018}, notoriamente: \emph{Independente de frameworks}, \emph{Testável}, \emph{Independente de interface de usuário}, \emph{Independente de banco de dados} e {Independente de qualquer agente externo}.
 
@@ -61,7 +61,7 @@
     {Modelo de Arquitetura Limpa}
     {CleanArchitecture.jpg}
     {clean-architecture}
-    {\cite[p. 197]{Martin2018}}
+    {\cite[pág. 197]{Martin2018}}
 
 
 \section{Como tdd auxilia na processo de chegada a uma arquitetura limpa?}
@@ -76,7 +76,7 @@
   \subsection{O jogo}
 
     Hive\footnotemark é um jogo abstrato de duelo, tal qual o xadrez, onde os jogadores devem usar seus respectivos acervos para cercar o alvo oponente.
-    \footnotetext{Tradução e adaptação nossa a partir de \url{https://www.ultraboardgames.com/hive/game-rules.php}. Acesso em: 29 de janeiro de 2021.}
+    \footnotetext{Tradução e adaptação nossa do sítio "UltraBoardGames: How to Play Hive". Disponível em: \url{https://www.ultraboardgames.com/hive/game-rules.php}. Acesso em: 29 de janeiro de 2021.}
 
     Cada jogador possui onze peças em formato hexagonal de cinco tipos distintos, cada tipo sendo representado por um inseto: uma abelha rainha, o alvo; duas aranhas; dois besouros; três gafanhotos; e, três formigas.
 
