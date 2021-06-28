@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "live-server src",
+    "start": "live-server --watch=src/main.pdf --verbose --wait=1000 src",
     "compile": "nodemon --exec './compile.sh' -e 'tex'"
   },
   "devDependencies": {
