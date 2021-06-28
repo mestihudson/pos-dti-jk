@@ -73,8 +73,13 @@
 
     Desenvolvimento guiado por testes privilegia uma conduta que permite definir as funções essenciais do sistema, implementá-las da maneira mais simplória conhecida e através de sucessivas modificações, amparadas por uma rede de proteção que previne regressões, alcançar um modelo que expressa, claramente, quais seus objetivos e permite uma evolução sustentável do produto.
 
-\section{O estudo de caso}
 \section{Trabalhos relacionados}
+
+\section{O problema sob foco}
+
+  O objetivo é construir uma aplicação onde um usuário qualquer possa se registrar para adquirir acesso. Uma vez autenticado ele pode propor ou responder a uma proposta de partida com um adversário que tenha realizado o mesmo caminho. E, obviamente, desempenhar uma partida. Deve, ainda, ser possível, organizar torneios, visualizar uma lista de classificação dos jogadores por suas respectivas pontuações e, apenas, observar uma partida, sem dela participar. É desejável que o registro e a autenticação possam ser realizados utilizando os mecanismos ofertados pelo Google e Facebook, bem como retomar uma partida que foi explicita ou implicitamente suspensa (um dos jogadores pode ter perdido a conexão por problemas em sua rede). Os jogadores devem ser capazes de convidar um adversário específico para uma partida. Também seria interessante que os usuários possam recuperar suas senhas que, ocasionalmente, possam vir a esquecer ou alterar informações sobre si (como nome que é apresentado aos demais, imagem de perfil, etc) além, é claro, de poder remover sua conta, caso não tenha mais interesse no serviço.
+
+  Essa é uma descrição hipotética de necessidade inicial de um interessado em patrocinar um projeto dessa qualidade. Claro, em uma situação real, muitos outros detalhes deveriam ser capturados para refinar a solução, mas aqui vamos partir da premissa que esta é nossa única demanda.
 
   \subsection{O jogo}
 
@@ -92,11 +97,5 @@
     Os insetos tem movimentações diversas. A abelha rainha, um passo por vez ao redor da colméia. As aranhas, três passos ao redor da colméia, sempre na mesma direção iniciada. Os besouros, um passo ao redor da colméia ou acima dela, e a peça sob o qual ele pousa fica imobilizada até que ele a deixe e, para efeito de novas entradas, a posição ocupada assume a cor do mesmo. Os gafanhotos, se movimentam sobre a colméia, iniciando de um lado e seguindo em linha reta (perpendicular a aresta escolhida) até o lado oposto. E,  as formigas, o fazem ao redor da colméia sem limites de passos. Tais ações não podem resultar em uma colméia fragmentada, mesmo que o resultado seja uma colméia intacta. As movimentações ao redor devem ser de livre deslize, não sendo permitido entrar em uma posição onde isso não é possível.
 
     Finalmente, a abelha rainha é considerada cercada quando todos os seus lados estão ocupados por alguma peça em jogo, independente de a quem elas pertençam.
-
-  \subsection{O escopo}
-
-    O objetivo é construir uma aplicação onde um usuário qualquer possa se registrar para adquirir acesso. Uma vez autenticado ele pode propor ou responder a uma proposta de partida com um adversário que tenha realizado o mesmo caminho. E, obviamente, desempenhar uma partida. Deve, ainda, ser possível, organizar torneios, visualizar uma lista de classificação dos jogadores por suas respectivas pontuações e, apenas, observar uma partida, sem dela participar. É desejável que o registro e a autenticação possam ser realizados utilizando os mecanismos ofertados pelo Google e Facebook, bem como retomar uma partida que foi explicita ou implicitamente suspensa (um dos jogadores pode ter perdido a conexão por problemas em sua rede). Os jogadores devem ser capazes de convidar um adversário específico para uma partida. Também seria interessante que os usuários possam recuperar suas senhas que, ocasionalmente, possam vir a esquecer ou alterar informações sobre si (como nome que é apresentado aos demais, imagem de perfil, etc) além, é claro, de poder remover sua conta, caso não tenha mais interesse no serviço.
-
-    Essa é uma descrição hipotética de necessidade inicial de um interessado em patrocinar um projeto dessa qualidade. Claro, em uma situação real, muitos outros detalhes deveriam ser capturados para refinar a solução, mas aqui vamos partir da premissa que esta é nossa única demanda.
 
   \input{nova-solucao}
