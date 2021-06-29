@@ -327,18 +327,18 @@
 
   Outra liberdade que se toma, nessa solução em particular, diz respeito a estruturação do código do frontend que, em não sendo uma parte da aplicação para o qual foi delegado muita responsabilidade, foi utilizada uma divisão baseada nas definições de \citeonline{Frost2016}, seja uma \emph{página}, do ponto de vista do usuário, sejam \emph{compoenentes}, que são integrados para formar aquelas - \figref{ArvoreFrontend}.
 
-  \begin{figure}[h]
+  \begin{figure}[htb!]
     \centering
     \efbox[rightline=false,topline=false,leftline=false,bottomline=false]{
       \makebox[\textwidth]{
-        \begin{subfigure}[t]{0.5\textwidth}
+        \begin{subfigure}[htb!]{0.5\textwidth}
           \centering
           \includegraphics[width=0.9\textwidth]{backend-package-tree.png}
           \caption{Backend}
           \label{fig:ArvoreBackend}
         \end{subfigure}
         \hfill
-        \begin{subfigure}[t]{0.5\textwidth}
+        \begin{subfigure}[htb!]{0.5\textwidth}
           \centering
           \includegraphics[width=0.9\textwidth]{frontend-package-tree.png}
           \caption{Frontend}
