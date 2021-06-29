@@ -163,14 +163,7 @@
     \item Deve constar um registro persistente ao final do processo.
   \end{itemize}
 
-  Já há elementos para elencar os cenários a serem trabalhados (\figref{criar-conta.cenarios}). Também é possível detalhar os passos de cada um deles usando o método sugerido por \citeonline{Nicieja2018} para derivação a partir dos critérios de aceite. O formato, \emph{Gherkin}, se baseia no celebre artigo escrito por \citeonline{North2006}.
-
-  \imagem
-    {width=\textwidth}
-    {\textbf{Cenários} elencados para a \textbf{história} \emph{Criar conta}}
-    {v1.feature.png}
-    {criar-conta.cenarios}
-    {Próprio autor}
+  Já há elementos para elencar os cenários a serem trabalhados\footnote{Código disponível em: \url{https://github.com/mestihudson/hive/blob/pre-refactoring/e2e/features/registro/criar-conta.feature}.}. Também é possível detalhar os passos de cada um deles usando o método sugerido por \citeonline{Nicieja2018} para derivação a partir dos critérios de aceite. O formato, \emph{Gherkin}, se baseia no celebre artigo escrito por \citeonline{North2006}.
 
   Essa estrutura se alicerça na seguinte ideia: o passo identificado por \textbf{Dado} define o \emph{contexto} - pré-condição - onde a \emph{ação} (\textbf{Quando}) deve acontecer para que o \emph{resultado esperado} - pós-condição - (\textbf{Então}) seja observado.
 
@@ -201,14 +194,7 @@
     {Própio autor\footnotemark}
   \footnotetext{Utilizada a ferramenta/serviço \url{https://draw.io}.}
 
-  Esse ponto é auxiliado pelo que \citeonline[págs. 142 e 226]{Abelson1996} chama de \emph{wishful thinking}\footnote{Pensamento positivo, em tradução livre.} - mais precisamente o que \citeonline[pág. 45]{Astels2003} denomina \emph{programar por intenção} - para implementar os passos do cenário apresentados como se a funcionalidade pretendida já existisse. O objetivo é ser o mais claro possível sobre o que se almeja com aquela especificação, o resultado pode ser visto na \figref{criar-conta.deve-ser-bem-sucedido.passos}.
-
-  \imagem
-    {width=12cm}
-    {Implementação dos passos do \textbf{cenário} \emph{deve ser bem sucedido} da \textbf{história} \emph{Criar conta}}
-    {v1.steps.js.png}
-    {criar-conta.deve-ser-bem-sucedido.passos}
-    {Própio autor}
+  Esse ponto é auxiliado pelo que \citeonline[págs. 142 e 226]{Abelson1996} chama de \emph{wishful thinking}\footnote{Pensamento positivo, em tradução livre.} - mais precisamente o que \citeonline[pág. 45]{Astels2003} denomina \emph{programar por intenção} - para implementar os passos do cenário apresentados como se a funcionalidade pretendida já existisse. O objetivo é ser o mais claro possível sobre o que se almeja com aquela especificação\footnote{O resultado pode ser visto em \url{https://github.com/mestihudson/hive/blob/pre-refactoring/e2e/steps/all.steps.js}.}.
 
   Essa etapa pode divergir bastante entre os diversos autores que tratam do tema, no que tange os conceitos de \emph{baby steps} \cite[pág. 1]{Aniche2011}, \emph{iniciar pelas verificações}, \emph{usar somente uma asserção por cenário}, \emph{não usar asserções fora da fase de verificação}. No fim, prevalecem, \emph{a familiaridade com as tecnologias empregadas}, \emph{a experiência no processo de desenvolvimento guiado por testes}, \emph{a simplicidade} \cite[pág. xii]{Beck2003}, mas, principalmente, \emph{o bom senso}.
 
@@ -216,52 +202,15 @@
 
   Para este cenário, em particular, vemos, claramente, 2 componentes fundamentais: entrada de dados - ui (interface de usuário, mas poderia ser uma interface de código, se nossa solução fosse destinada a outros sistemas ao invés de humanos); e, saída de dados - db (que poderia envolver outros atores, como, por exemplo, um servidor de envio de mensagens eletrônicas externo, caso fossemos exigir ativação da conta por algum link encaminhado por email).
 
-  Espera-se que, ao final da execução deste caso de teste, durante a verificação dos \emph{resultados esperados}, tenha-se um registro que comprove que a entrada de dados foi devidamente persistida. Isso deve ocorrer em contraposição ao \emph{contexto} do teste, em que o dito registro não deve existir. Assim o primeiro passo na direção da completude do cenário é a criação da consulta que faz a verificação da ausência do registro na base de dados, conforme \figref{criar-conta-deve-ser-bem-sucedido-passo.dado}.
+  Espera-se que, ao final da execução deste caso de teste, durante a verificação dos \emph{resultados esperados}, tenha-se um registro que comprove que a entrada de dados foi devidamente persistida. Isso deve ocorrer em contraposição ao \emph{contexto} do teste, em que o dito registro não deve existir. Assim o primeiro passo na direção da completude do cenário é a criação da consulta que faz a verificação da ausência do registro na base de dados\footnote{Conforme \url{https://github.com/mestihudson/hive/blob/pre-refactoring/e2e/steps/DB.js}.}.
 
-  \imagem
-    {width=\textwidth}
-    {Banco de dados}
-    {v1.db.test.js.png}
-    {criar-conta-deve-ser-bem-sucedido-passo.dado}
-    {Próprio autor}
+  Para o passo que representa a ação, vemos que existem níveis de abstração, ao observar que o comando \emph{quando eu me registro}, na verdade é uma composição de 3 ações: abrir a página do formulário de registro; preencher os campos obrigatórios do mesmo (que, por si só, já é uma composição pois resume o preenchimento de muitos campos a uma única ação composta); e, finalmente, submeter essas informações pelo clique no botão \emph{registrar}\footnote{Como verificável em \url{https://github.com/mestihudson/hive/blob/pre-refactoring/e2e/steps/UI.js}.}.
 
-  Para o passo que representa a ação, vemos que existem níveis de abstração, ao observar que o comando \emph{quando eu me registro}, na verdade é uma composição de 3 ações: abrir a página do formulário de registro; preencher os campos obrigatórios do mesmo (que, por si só, já é uma composição pois resume o preenchimento de muitos campos a uma única ação composta); e, finalmente, submeter essas informações pelo clique no botão \emph{registrar} (\figref{criar-conta-deve-ser-bem-sucedido-passo.quando}).
+  Por fim, temos o passo de verificação, como já havíamos adiantado, reutilizamos o código de suporte da pré-condição que deve ter o efeito oposto nesse momento, bem como a da existência de uma mensagem de feedback do sucesso da ação\footnote{Tal qual já apresentado em \url{https://github.com/mestihudson/hive/blob/pre-refactoring/e2e/steps/DB.js}.}.
 
-  \imagem
-    {width=\textwidth}
-    {Inteface de usuário}
-    {v1.ui.test.js.png}
-    {criar-conta-deve-ser-bem-sucedido-passo.quando}
-    {Próprio autor}
+  Isso conclui o trabalho de construção da rede de proteção que nos permitirá implementar a funcionalidade com a confiança de que seremos apoiados pela especificação automatizada. Desse momento em diante, podemos, inclusive, escolher a plataforma que melhor nos convier (desde que atenda aos limites mínimos impostos, que nesse caso são: uma aplicação web e um banco de dados relacional suportado pela plataforma). Ou seja, a miriade de possibilidades em que essa solução pode ser implementada é enorme. Para o nosso caso, em particular, escolhemos um frontend em React e um backend em Java/Quarkus e um banco de dados PostgreSQL\footnote{Sem muito esforço chegamos a solução apresentada em: \url{https://github.com/mestihudson/hive/blob/pre-refactoring/api/src/main/resources/db/migration/V1.0.0__criar_tabela_usuarios.sql}, \url{https://github.com/mestihudson/hive/blob/pre-refactoring/api/src/main/java/hive/Main.java} e \url{https://github.com/mestihudson/hive/blob/pre-refactoring/app/src/Raiz.js}.}
 
-  Por fim, temos o passo de verificação, como já havíamos adiantado, reutilizamos o código de suporte da pré-condição que deve ter o efeito oposto nesse momento, bem como a da existência de uma mensagem de feedback do sucesso da ação - \figref{criar-conta-deve-ser-bem-sucedido-passo.dado}.
-
-  Isso conclui o trabalho de construção da rede de proteção que nos permitirá implementar a funcionalidade com a confiança de que seremos apoiados pela especificação automatizada. Desse momento em diante, podemos, inclusive, escolher a plataforma que melhor nos convier (desde que atenda aos limites mínimos impostos, que nesse caso são: uma aplicação web e um banco de dados relacional suportado pela plataforma). Ou seja, a miriade de possibilidades em que essa solução pode ser implementada é enorme. Para o nosso caso, em particular, escolhemos um frontend em React e um backend em Java/Quarkus e um banco de dados PostgreSQL.
-
-  Sem muito esforço chegamos a solução apresentada em: \figref{banco de dados}, \figref{frontend} e \figref{backend-main}.
-
-  \imagem
-    {width=0.95\textwidth}
-    {Banco de dados}
-    {v1.sql.png}
-    {banco de dados}
-    {Próprio autor}
-
-  \imagem
-    {width=0.95\textwidth}
-    {Frontend}
-    {v1.jsx.png}
-    {frontend}
-    {Próprio autor}
-
-  \imagem
-    {width=0.95\textwidth}
-    {Backend}
-    {v1.java.png}
-    {backend-main}
-    {Próprio autor}
-
-  Sigamos esse método para os demais cenários da \figref{criar-conta.cenarios}.
+  Esse mesmo método é seguido para os demais cenários\footnote{Para conferir, \url{https://github.com/mestihudson/hive/blob/pre-refactoring/e2e/features/registro/criar-conta.feature}.}.
 
   Nesse momento, guardadas as devidas proporções, já se pode dizer que o valor imediato esperado pelo patrocinador foi entregue. No entanto, existe muito trabalho pela frente para tornar o produto atraente, muitas funcionalidades precisam ser incorporadas, e como se está utilizando metodologia ágeil, as decisões sobre as histórias de usuário vindouras são tomadas quando estas estiverem sob discussão. Ao contrário do que se costuma fazer em metodologias de desenvolvimento tradicionais, onde uma tentativa de premonição dos problemas a serem enfrentados é realizada, nesse caso é fundamental adotar práticas de desenho arquitetural que permitam extender as capacidades do sistema com o mínimo de trauma possível.
 
@@ -276,50 +225,15 @@
 
   Isso leva a uma ponderação entre prós e contras sobre os tipos de testes. Se por um lado os testes de ponta a ponta permitem afirmar que as funcionalidade solicitadas foram entregues conforme as especificações, também é possível observar que quanto maior é a sua quantidade mais frustrantes é a experiência de utilizá-los como ferramenta de feedback, vez que seu tempo de execução é consideravelmente maior que a de testes de unidade.
 
-  Para ser mais explícito, considere-se os cenários de exceção, da história de usuário em trabalho, onde se espera que os mesmo falhem por invalidade do email e da senha informados. É fácil perceber a necessidade de validar múltiplos valores e, provavelmente, o melhor lugar para fazê-lo não seja nos testes de funcionais, mas naqueles que não requerem acesso a recursos externos, como demostrado em \figref{email-validator-spec}.
+  Para ser mais explícito, considere-se os cenários de exceção, da história de usuário em trabalho, onde se espera que os mesmo falhem por invalidade do email e da senha informados. É fácil perceber a necessidade de validar múltiplos valores e, provavelmente, o melhor lugar para fazê-lo não seja nos testes de funcionais, mas naqueles que não requerem acesso a recursos externos\footnote{Como demostrado em \url{https://github.com/mestihudson/hive/blob/post-refactoring/api/src/test/java/unit/hive/registro/domain/EmailValidatorDefaultSpec.java}.}
 
-  \imagem
-    {width=0.95\textwidth}
-    {Teste de unidade para validação de email}
-    {v2.email.validator.spec.java.png}
-    {email-validator-spec}
-    {Próprio autor}
+  Também se pode tirar proveito dessa abordagem para solidificar o entendimento do cerne do negócio\footnote{Já citado em \url{https://github.com/mestihudson/hive/blob/pre-refactoring/e2e/features/registro/criar-conta.feature}.} e abstrair as dependências que prestam serviços a ele\footnote{Registrado em \url{https://github.com/mestihudson/hive/blob/post-refactoring/api/src/test/java/unit/hive/registro/application/CriarContaServiceSpec.java}.}.
 
-  Também se pode tirar proveito dessa abordagem para solidificar o entendimento do cerne do negócio, \figref{criar-conta-use-case-spec}, e abstrair as dependências que prestam serviços a ele.
+  Isso capacita os testes isolados de funcionalidades de mais baixo nível\footnote{Como as regras de validação de senha \url{https://github.com/mestihudson/hive/blob/post-refactoring/api/src/test/java/unit/hive/registro/domain/SenhaValidatorDefaultSpec.java}.}, e com o benefício de executarem de maneira celere, tendo como retaguarda os testes de mais alto nível para garantir que tais componentes se integram da forma esperada.
 
-  \imagem
-    {width=0.95\textwidth}
-    {Teste de unidade para o coração do negócio}
-    {v2.criar-conta-use-case.spec.java.png}
-    {criar-conta-use-case-spec}
-    {Próprio autor}
+  Esse método ainda permite focar a atenção sobre situações que podem ser difíceis de observar, como a integração com um banco de dados\footnote{Empenhado em \url{https://github.com/mestihudson/hive/blob/post-refactoring/api/src/test/java/integration/hive/registro/adapters/out/persistence/UsuariosJdbcRepositorySpec.java}.}.
 
-  Isso capacita os testes isolados de funcionalidades de mais baixo nível, \figref{senha-validator-spec}, e com o benefício de executarem de maneira celere, tendo como retaguarda os testes de mais alto nível para garantir que tais componentes se integram da forma esperada.
-
-  \imagem
-    {width=0.95\textwidth}
-    {Teste de unidade para validação de senha}
-    {v2.senha.validator.spec.java.png}
-    {senha-validator-spec}
-    {Próprio autor}
-
-  Esse método ainda permite focar a atenção sobre situações que podem ser difíceis de observar, como a integração com um banco de dados, \figref{repositorio-spec}.
-
-  \imagem
-    {width=0.7\textwidth}
-    {Teste de integração para repositório jdbc}
-    {v2.repositorio-spec.java.png}
-    {repositorio-spec}
-    {Próprio autor}
-
-  Ou que tendem a ser camufladas por outras razões, como o tratamento de entradas por uma api rest, \figref{rest-api-spec}, quando se verifica o conjunto de maneira holística.
-
-  \imagem
-    {width=0.7\textwidth}
-    {Teste de integração para api rest}
-    {v2.rest-api-spec.java.png}
-    {rest-api-spec}
-    {Próprio autor}
+  Ou que tendem a ser camufladas por outras razões, como o tratamento de entradas por uma api rest\footnote{\url{https://github.com/mestihudson/hive/blob/post-refactoring/api/src/test/java/integration/hive/registro/adapters/in/web/CriarContaResourceSpec.java}.}, quando se verifica o conjunto de maneira holística.
 
   A cobertura sobre a especificação é aumentada sem sacrificar o tempo de retroalimentação.
 
@@ -350,13 +264,6 @@
     \small{Fonte: Próprio autor}
   \end{figure}
 
-  Essa estrutura permite testar os componentes e páginas, novamente, de forma isolada, \figref{pagina-spec}, ao passo que são resguardados pelos testes de aceitação.
-
-  \imagem
-    {width=0.7\textwidth}
-    {Teste de unidade da página de registro}
-    {v2.pagina.spec.js.png}
-    {pagina-spec}
-    {Próprio autor}
+  Essa estrutura permite testar os componentes e páginas, novamente, de forma isolada\footnote{Também registrado em \url{https://github.com/mestihudson/hive/blob/post-refactoring/app/test/unit/paginas/Registro.spec.js}.}, ao passo que são resguardados pelos testes de aceitação.
 
   Outro alvo da metodologia é a "lei" de referência das camadas, onde as mais externas conhecem as mais internas mas o contrário é uma violação arquitetural - \figref{clean-architecture}. De maneira geral, se pode constatar que os componentes do backend formam o desenho proposto por \citeonline{Cockburn2005}, que é uma arquitera limpa, conforme \citeonline[pág. 202]{Martin2018}.
