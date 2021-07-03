@@ -28,6 +28,8 @@
   \usepackage{fancyhdr}
   \usepackage{ragged2e}
   \usepackage{scrextend}
+  \usepackage{etoolbox}
+  \apptocmd{\thebibliography}{\justifying}{}{}
   \pagestyle{fancyplain}
   \fancyhf{}
   \fancyhead[R]{\thepage}
