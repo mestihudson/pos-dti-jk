@@ -1,5 +1,0 @@
-class UI {
-  async mensagemPresente(email) {
-    return await this.driver.findElements(`//[@text="${email}"]`).length === 1
-  }
-}

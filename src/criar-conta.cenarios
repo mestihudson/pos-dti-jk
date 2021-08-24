@@ -1,5 +1,0 @@
-deve ser bem sucedido
-deve falhar para email inválido
-deve falhar para senha menor que 8 caracteres
-deve falhar para senha maior que 100 caracteres
-deve falhar para email já vinculado
